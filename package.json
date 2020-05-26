@@ -1,0 +1,54 @@
+{
+  "name": "@trevthedev/http2Communicator",
+  "version": "0.0.1",
+  "description": "communicate JSON and other information using http2",
+  "keywords": [
+    "node",
+    "http2",
+    "json",
+    "communications",
+    "server",
+    "messaging"
+  ],
+  "homepage": "https://github.com/TrevTheDev/http2Communicator",
+  "bugs": {
+    "url": "https://github.com/TrevTheDev/http2Communicator/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TrevTheDev/http2Communicator.git"
+  },
+  "private": false,
+  "scripts": {
+    "lint": "eslint src",
+    "test": "node_modules/mocha/bin/mocha",
+    "test-debug": "node --inspect-brk ./node_modules/mocha/bin/mocha"
+  },
+  "author": "Trevor Rabie",
+  "license": "MIT",
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "chai-arrays": "^2.0.0",
+    "chai-as-promised": "^7.1.1",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-plugin-chai-expect": "^2.1.0",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-mocha": "^7.0.0",
+    "eslint-plugin-node": "^11.1.0",
+    "mocha": "^7.1.2",
+    "nyc": "^15.0.1"
+  },
+  "dependencies": {
+    "@trevthedev/mash": "0.0.20",
+    "fastify": "^2.14.0",
+    "uuid": "^8.0.0"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "main": "src/server/server node.js",
+  "readmeFilename": "README.md",
+  "type": "module",
+  "mode": "all"
+}

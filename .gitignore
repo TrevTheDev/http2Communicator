@@ -1,0 +1,9 @@
+/.nyc_output/
+/coverage/
+/logs/
+/node_modules/
+/.tmp/
+/old/
+package-lock.json
+/dev certificate/selfsigned.crt
+/dev certificate/selfsigned.key

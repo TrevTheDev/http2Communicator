@@ -1,0 +1,7 @@
+/dev certificate/*
+/.nyc_output
+/coverage
+/logs
+/node_modules
+.tmp
+package-lock.json
