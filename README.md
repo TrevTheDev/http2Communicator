@@ -7,7 +7,7 @@ JSON and stream messaging over HTTP2.
 ## Installation
 
 ```shell
-npm install @TrevTheDev/http2Communicator
+npm install @trevthedev/http2communicator
 ```
 
 ## Basic Usage
@@ -31,7 +31,7 @@ server.on('question', async (serverResponse)=>{
 ### On The Server
 
 ```javascript
-import ServerNode from '@TrevTheDev/http2Communicator'
+import ServerNode from '@trevthedev/http2communicator'
 
 const server = new ServerNode()
 
@@ -78,7 +78,7 @@ server.listen()
 ### On the Client
 
 ```javascript
-import ClientNode from '@TrevTheDev/http2Communicator/client'
+import ClientNode from '@trevthedev/http2communicator/client'
 
 const client = new ClientNode()
 
@@ -245,6 +245,7 @@ Instantiation:
 serverNode.on('question', (serverResponse) => {
     
 })
+
 ```
 
 #### Properties
@@ -279,6 +280,7 @@ Instantiation:
 question.on('question', (response) => {
     
 })
+
 ```
 
 #### Properties

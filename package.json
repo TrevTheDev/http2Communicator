@@ -1,6 +1,6 @@
 {
   "name": "@trevthedev/http2communicator",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "communicate JSON and other information using http2",
   "keywords": [
     "node",
