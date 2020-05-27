@@ -10,12 +10,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419cd6b4-32fa-4287-a7fc-34dbc157bc59" name="Default Changelist" comment="Mostly working">
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/xplore.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/http2Communicator.iml" afterDir="false" />
+    <list default="true" id="419cd6b4-32fa-4287-a7fc-34dbc157bc59" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,7 +153,7 @@
       <workItem from="1590470161361" duration="4128000" />
       <workItem from="1590474350138" duration="7079000" />
       <workItem from="1590497610822" duration="696000" />
-      <workItem from="1590498348500" duration="4706000" />
+      <workItem from="1590498348500" duration="5123000" />
     </task>
     <task id="LOCAL-00001" summary="Progress!">
       <created>1589354365037</created>
@@ -201,7 +197,14 @@
       <option name="project" value="LOCAL" />
       <updated>1590548071703</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Mostly working">
+      <created>1590556984912</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1590556984912</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,10 +303,10 @@
     </state>
     <state x="597" y="318" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590393761220" />
     <state x="597" y="318" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1707.960@0.0.1707.960" timestamp="1588742410787" />
-    <state x="254" y="77" width="879" height="769" key="CommitChangelistDialog2" timestamp="1590548071500">
+    <state x="254" y="77" width="879" height="769" key="CommitChangelistDialog2" timestamp="1590556984852">
       <screen x="0" y="0" width="1707" height="960" />
     </state>
-    <state x="254" y="77" width="879" height="769" key="CommitChangelistDialog2/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590548071500" />
+    <state x="254" y="77" width="879" height="769" key="CommitChangelistDialog2/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590556984852" />
     <state x="319" y="113" width="879" height="663" key="CommitChangelistDialog2/0.0.1707.960@0.0.1707.960" timestamp="1588740059640" />
     <state x="420" y="77" width="879" height="769" key="CommitChangelistDialog2/0.0.2827.960@0.0.2827.960" timestamp="1589354364768" />
     <state width="1274" height="542" key="DebuggerActiveHint" timestamp="1590486630757">
@@ -450,10 +453,10 @@
       <screen x="0" y="0" width="1707" height="960" />
     </state>
     <state width="498" height="445" key="SwitcherDM/0.0.1707.960@0.0.1707.960" timestamp="1588821713211" />
-    <state x="278" y="226" key="Vcs.Push.Dialog.v2" timestamp="1590548079685">
+    <state x="278" y="226" key="Vcs.Push.Dialog.v2" timestamp="1590556986687">
       <screen x="0" y="0" width="1707" height="960" />
     </state>
-    <state x="278" y="226" key="Vcs.Push.Dialog.v2/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590548079685" />
+    <state x="278" y="226" key="Vcs.Push.Dialog.v2/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590556986687" />
     <state x="461" y="226" key="Vcs.Push.Dialog.v2/0.0.2827.960@0.0.2827.960" timestamp="1589354382892" />
     <state width="853" height="449" key="XDebugger.FullValuePopup" timestamp="1588503122333">
       <screen x="0" y="0" width="1707" height="960" />

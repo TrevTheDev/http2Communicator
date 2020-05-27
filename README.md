@@ -233,7 +233,7 @@ A Question is a request `json` Promise that awaits a response `json`.  On `await
 
 ### question.say(json, type)
 
-Sends a json object of type via the `ObjectStream`
+Sends a json object of type via the `ObjectStream`.  Say will only work after `question` has been sent to `server` via `await`.
 
 ## ServerResponse
 
@@ -269,13 +269,6 @@ Creates a new listening `Speaker`|`Stream` that the `serverReponse` can receive 
 - `speakerType` \<string='object'\> speaker will be a `Speaker` if 'object' or a `Stream` if 'raw'
 - returns \<Promise->Speaker |Promise->Stream\> a promise that resolves to a `Speaker` or a `Stream`
 
-### serverResponse.reply(json, type)
-
-Sends json response to this `Question` - serverResponse is ended.  Type can also be `cancelled` to reject the `Question`.  Throws if any `Questions`, `Speakers` or `Listeners` remain connected.
-
-- `json` \<object\> json response to question
-- `type` \<string='reply'\>
-
 ## Response
 
 Extends `EventEmitter`
@@ -301,17 +294,19 @@ question.on('question', (response) => {
 
 ### response.reply(json, type)
 
-Sends json response to this `Question` and resolves promise.  Type can also be `cancelled` to reject the `Question`.  Throws if any `questions` remain outstanding
+Sends json response to this `Question` and resolves promise.  Type can also be `cancelled` to reject the `Question`.  Throws if any `Questions`, `Speakers` or `Listeners` remain connected.
 
 - `json` \<object\> json response to question
 - `type` \<string='reply'\>
+
+Only one `reply` should be sent.
 
 ### response.ask(json)
 
 Asks a new `Question` related to this `Response`
 
-- `json` \<object\> question to ask
-- returns \<Question\> a Question promise that resolves after the response is received
+- `json` \<object\> `question` to ask
+- returns \<Question\> a `Question` promise that resolves after the response is received
 
 ### response.say(json, type)
 
