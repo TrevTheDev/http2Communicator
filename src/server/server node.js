@@ -11,6 +11,7 @@ import { SETTINGS, setDefaultSettings } from './globals.js'
 
 const createCertIfAbsent = () => {
   if (!fs.existsSync(SETTINGS.keyFile)) {
+    if (!fs.existsSync(SETTINGS.certDir)) fs.mkdirSync(SETTINGS.certDir)
     const out = execSync(`openssl req -nodes -new -x509 -subj "${SETTINGS.certArgs}" -keyout "${SETTINGS.keyFile}" -out "${SETTINGS.certFile}"`)
     console.log(out)
   }

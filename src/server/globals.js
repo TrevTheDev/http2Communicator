@@ -11,6 +11,7 @@ export const setDefaultSettings = (settings) => {
     },
     serverPath: '/http2Communicator',
     listenerPath: '/http2Stream',
+    certDir: './dev certificate',
     keyFile: './dev certificate/selfsigned.key',
     certFile: './dev certificate/selfsigned.crt',
     certArgs: '/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com',

@@ -1,6 +1,6 @@
 {
   "name": "@trevthedev/http2communicator",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "communicate JSON and other information using http2",
   "keywords": [
     "node",
@@ -47,8 +47,8 @@
   },
   "main": "src/server/server node.js",
   "exports": {
-    ".": "src/server/server node.js",
-    "./client": "src/ui/client node.js"
+    ".": "./src/server/server node.js",
+    "./client": "./src/ui/client node.js"
   },
   "type": "module",
   "mode": "all",
