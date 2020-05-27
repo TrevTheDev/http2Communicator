@@ -23,7 +23,7 @@ On the Server
 ```javascript
 server.on('question', async (serverResponse)=>{
   serverResponse.reply({ response: 'what ever' })        
-}
+})
 ```
 
 ## More Advanced Example
@@ -180,8 +180,8 @@ const client = new ClientNode(settings)
 - `settings` \<object\> settings:
   - serverAddress: 'https://localhost:8443'
   - http2ConnectionOptions: {
-      rejectUnauthorized: false,
-      enablePush: true,
+    rejectUnauthorized: false,
+    enablePush: true,
     }
   - serverPath: '/http2Communicator'
   - listenerPath: '/http2Stream'
@@ -200,7 +200,7 @@ Asks a new `Question` of the `ServerNode`
 
 ## Question
 
-Extends `Base`
+Extends `EventEmitter`
 
 Instantiation:
 
@@ -217,6 +217,8 @@ A Question is a request `json` Promise that awaits a response `json`.  On `await
 #### Properties
 
 - `id` \<string\> a Unique Identifier
+- `objectStream` \<ObjectStream\> ObjectStream used for communications
+- `json` \<Object\> Json of question
 - `response` \<Response\> Response object if any
 - `speakers` \<Object[]\> Array of active `Speakers`
 - `response` \<Response=\> if the Question is related to a particular `Response` - a "sub" question
@@ -227,6 +229,11 @@ A Question is a request `json` Promise that awaits a response `json`.  On `await
 - `cancelled` on receipt this rejects the Question Promise with `cancelled` message.  It will throw if there are any open `Speakers`
 - `question` emits a `question` event with a new `Response` object
 - `listening` emits a `speakerType` event with a `Speaker `|`Stream` object
+- any messages not of the above type are `emit`ed as their message type
+
+### question.say(json, type)
+
+Sends a json object of type via the `ObjectStream`
 
 ## ServerResponse
 
@@ -271,7 +278,7 @@ Sends json response to this `Question` - serverResponse is ended.  Type can also
 
 ## Response
 
-Extends `Base`
+Extends `EventEmitter`
 
 Instantiation:
 
@@ -283,7 +290,14 @@ question.on('question', (response) => {
 
 #### Properties
 
+- `id` \<string\> a unique identifier
+- `objectStream` \<ObjectStream\> ObjectStream used for communications
+- `json` \<Object\> Json of received `Question`
 - `questions` \<Object[]\> Array of `Questions` asked by this `Response` awaiting answers
+
+#### Messages Handling
+
+- any messages received are `emit`ed as their message type
 
 ### response.reply(json, type)
 
@@ -299,21 +313,7 @@ Asks a new `Question` related to this `Response`
 - `json` \<object\> question to ask
 - returns \<Question\> a Question promise that resolves after the response is received
 
-## Base
-
-Base class for `Question` and `Response`
-
-#### Properties
-
-- `id` \<string\> a unique identifier
-- `objectStream` \<ObjectStream\> ObjectStream used for communications
-- `json` \<Object\> Json that created this `Base`
-
-#### Messages Handled
-
-- any messages not handled by the children are `emit` as their message type
-
-### base.say(json, type)
+### response.say(json, type)
 
 Sends a json object of type via the `ObjectStream`
 
@@ -326,9 +326,9 @@ An object stream converts a stream of bytes into a stream of JSON objects.  It e
 
 ## Speaker
 
-Instantiation via SpeakerResponse.createSpeaker and SpeakerResponse.createListener
+Instantiation via `serverResponse.createSpeaker` and `serverResponse.createListener`
 
-Sends objects in one direction of an `ObjectStream`
+Sends JSON objects in one direction using an `ObjectStream`
 
 ### speaker.say(json)
 
@@ -337,5 +337,3 @@ sends `json` over `ObjectStream`
 ### speaker.end(json)
 
 sends `json` over `ObjectStream` and ends `ObjectStream`
-
-## 
