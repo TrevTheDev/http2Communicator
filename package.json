@@ -1,6 +1,6 @@
 {
-  "name": "@trevthedev/http2Communicator",
-  "version": "0.0.1",
+  "name": "@trevthedev/http2communicator",
+  "version": "0.0.2",
   "description": "communicate JSON and other information using http2",
   "keywords": [
     "node",
@@ -40,8 +40,6 @@
     "nyc": "^15.0.1"
   },
   "dependencies": {
-    "@trevthedev/mash": "0.0.20",
-    "fastify": "^2.14.0",
     "uuid": "^8.0.0"
   },
   "engines": {
@@ -52,7 +50,9 @@
     ".": "src/server/server node.js",
     "./client": "src/ui/client node.js"
   },
-  "readmeFilename": "README.md",
   "type": "module",
-  "mode": "all"
+  "mode": "all",
+  "directories": {
+    "test": "tests"
+  }
 }
