@@ -2,7 +2,7 @@ import fs from 'fs'
 import ServerNode from '../src/server/server node.js'
 import ClientNode from '../src/ui/client node.js'
 
-const server = new ServerNode()
+const server = new ServerNode(undefined, { log: 'yes' })
 
 server.on('question', async (serverResponse) => {
   console.log(`LOG STEP 1: ${JSON.stringify(serverResponse.json)}`)

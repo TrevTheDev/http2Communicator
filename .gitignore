@@ -3,7 +3,7 @@
 /logs/
 /node_modules/
 /.tmp/
-/old/
+/.old/
 package-lock.json
 /dev certificate/selfsigned.crt
 /dev certificate/selfsigned.key

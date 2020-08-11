@@ -14,8 +14,8 @@ export const setDefaultSettings = (settings) => {
     certDir: './dev certificate',
     keyFile: './dev certificate/selfsigned.key',
     certFile: './dev certificate/selfsigned.crt',
-    certArgs: '/C=US/ST=Denial/L=Springfield/O=Dis/CN=www.example.com',
-    log: true,
+    certArgs: '/C=US/ST=Denial/L=Springfield/O=Dis/CN=*',
+    log: 'all',
 
     replyType: 'reply',
     cancelledType: 'cancelled',

@@ -10,7 +10,7 @@ export default class ClientNode extends EventEmitter {
     super()
     setDefaultSettings(settings)
     this.session = http2.connect(SETTINGS.serverAddress, SETTINGS.http2ConnectionOptions)
-    if (SETTINGS.log) logSession(this.session, 'client')
+    logSession(this.session, 'client', SETTINGS.log)
 
     this.stream = this.session.request({
       ':method': 'POST',
@@ -18,7 +18,7 @@ export default class ClientNode extends EventEmitter {
       'content-type': 'application/json',
     })
 
-    if (SETTINGS.log) logStream(this.stream, 'client')
+    logStream(this.stream, 'client', SETTINGS.log)
 
     this.objectStream = new ObjectStream(this.stream, this)
 

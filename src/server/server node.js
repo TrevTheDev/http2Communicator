@@ -30,7 +30,7 @@ export default class ServerNode extends EventEmitter {
     }
     this.http2Server = http2Server
 
-    if (SETTINGS.log) logServer(http2Server)
+    logServer(http2Server, 'server', SETTINGS.log)
     trackServer(this)
 
     http2Server.on('stream', (stream, headers) => {
@@ -53,10 +53,12 @@ export default class ServerNode extends EventEmitter {
         })
       } else if (headers[':path'] === SETTINGS.listenerPath)
         listeners[headers['listener-id']].resolve(stream)
+      else this.emit('stream', stream, headers)
     })
   }
 
   listen(port = SETTINGS.serverPort, hostname = SETTINGS.serverHostName) {
+    console.log(`listening on ${hostname} port ${port}`)
     this.http2Server.listen(port, hostname)
   }
 }
