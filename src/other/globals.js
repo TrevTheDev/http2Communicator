@@ -13,7 +13,7 @@ export const setDefaultSettings = (settings) => {
     browserStreams: '/browserStreams',
     nodeStreams: '/nodeStreams',
     listenerStreams: '/listenerStreams',
-    serveFilesFrom: `${process.cwd()}/src/duplex browser/dist`,
+    serveFilesFrom: `${process.cwd()}/dist`,
 
     // certDir: './dev certificate',
     // keyFile: './dev certificate/selfsigned.key',

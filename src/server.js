@@ -104,7 +104,7 @@ export default class ServerNode extends EventEmitter {
   }
 }
 
-// const serverNode = new ServerNode(undefined, { serverHostName: '0.0.0.0', serverPort: 7000 });
-// (async () => {
-//   await serverNode
-// })()
+const serverNode = new ServerNode(undefined, { serverHostName: '0.0.0.0', serverPort: 7000 });
+(async () => {
+  await serverNode
+})()
