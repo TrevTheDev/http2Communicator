@@ -7,7 +7,9 @@ import { SETTINGS } from '../other/globals.js'
 export default class Question extends Base {
   /**
    * @param {ObjectStream} objectStream - objectStream to ask questions on
-   * @param {object} json - question json
+   * @param {ClientHttp2Stream} objectStream.stream
+   * @param {ClientHttp2Session} objectStream.stream.session
+   * @param {Object} json - question json
    * @param {Response=} response - if the Question is related to a particular Response
    * @returns {Question}
    */
@@ -18,6 +20,10 @@ export default class Question extends Base {
     this.speakers = []
   }
 
+  /**
+   * routes msg to appropriate handler
+   * @param {Object} msg
+   */
   _handleMessage(msg) {
     if (msg.type === SETTINGS.replyType) {
       if (this.speakers.length > 0)
@@ -31,6 +37,14 @@ export default class Question extends Base {
     else super._handleMessage(msg)
   }
 
+  /**
+   * creates a new speaker of type Object for Objects | Raw for other data stream types
+   * an event is emitted of msg.speakerName once the speaker is ready for use
+   * a PUT request is sent to SETTINGS.listenerStreams with the parentId
+   * @param {String} msg.speakerName
+   * @param {SETTINGS.speakerTypeObject | SETTINGS.speakerTypeRaw } msg.speakerType
+   * @param {String} msg.listenerId
+   */
   _createSpeaker(msg) {
     const stream = this.objectStream.stream.session.request(
       {
@@ -60,16 +74,16 @@ export default class Question extends Base {
     } else throw new Error('unknown speaker type')
   }
 
-  then(...thenArgs) {
+  then(onSuccess, onFail) {
     this.objectStream.promiseDb[this.id] = this
 
     this.resolve = (msg) => {
-      thenArgs[0](msg)
+      if (onSuccess) onSuccess(msg)
       delete this.objectStream.promiseDb[this.id]
       if (this.response) delete this.response.questions[this.id]
     }
     this.reject = (msg) => {
-      thenArgs[1](msg)
+      if (onFail) onFail(msg)
       delete this.objectStream.promiseDb[this.id]
       if (this.response) delete this.response.questions[this.id]
     }

@@ -1,7 +1,7 @@
 /* eslint-env browser */
 import duplexStream from './client duplex stream.js'
 
-const doit = async () => {
+const doIt = async () => {
   const duplex = await duplexStream('https://192.168.1.70:7000/browserStreams')
   document.addEventListener('keypress', (ev) => {
     console.log(ev.key)

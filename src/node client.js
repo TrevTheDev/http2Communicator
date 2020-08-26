@@ -6,6 +6,10 @@ import Question from './conversation/question.js'
 import { SETTINGS, setDefaultSettings } from './other/globals.js'
 
 export default class NodeClient extends EventEmitter {
+  /**
+   * @param {SETTINGS} settings
+   * @returns {NodeClient}
+   */
   constructor(settings) {
     super()
     setDefaultSettings(settings)
@@ -52,8 +56,15 @@ export default class NodeClient extends EventEmitter {
     this.stream.once('finish', () => {})
   }
 
+  /**
+   * @param {Object} json
+   * @returns {Question}
+   */
   ask(json) { return new Question(this.objectStream, json) }
 
+  /**
+   * @returns {Promise}
+   */
   end() {
     return new Promise((resolve) => {
       this.once('end', () => {

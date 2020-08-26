@@ -4,21 +4,28 @@ import { SETTINGS } from '../other/globals.js'
 export const listeners = {}
 
 export default class ListenerPromise {
+  /**
+   * @param {ServerResponse} response
+   * @param {String} speakerName
+   * @param {String} speakerType
+   * @returns {ListenerPromise} a promise that resolves once a listener stream is connected
+   */
   constructor(response, speakerName, speakerType) {
     this.response = response
     this.speakerName = speakerName
     this.speakerType = speakerType
   }
 
+  // can only handle one .then which should be okay.
   then(onSuccess, onFail) {
     const uid = randomBytes(64).toString('base64')
     listeners[uid] = this
-    this.response.listeners.push(this)
+    this.response._listeners.push(this)
 
     try {
       this.resolve = (stream) => {
         stream.once('end', () => {
-          this.response.listeners.splice(this.response.listeners.indexOf(this), 1)
+          this.response._listeners.splice(this.response._listeners.indexOf(this), 1)
           stream.close()
         })
         stream.respond({
@@ -33,7 +40,7 @@ export default class ListenerPromise {
 
       this.reject = (msg) => {
         delete listeners[uid]
-        this.response.listeners.splice(this.response.listeners.indexOf(this), 1)
+        this.response._listeners.splice(this.response._listeners.indexOf(this), 1)
         if (onFail) onFail(msg)
       }
 

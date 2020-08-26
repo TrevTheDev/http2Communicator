@@ -4,18 +4,34 @@ import { SETTINGS } from '../other/globals.js'
 import ListenerPromise from './listener promise.js'
 
 export default class ServerResponse extends Response {
+  /**
+   * @param {ObjectStream} objectStream
+   * @param {object} questionJSON
+   * @returns {ServerResponse}
+   */
   constructor(objectStream, questionJSON) {
     super(objectStream, questionJSON)
-    this.speakers = []
-    this.listeners = []
+    this._speakers = []
+    this._listeners = []
   }
 
+  /**
+   * replies to Question
+   * @param {Object} json
+   * @param {String} type
+   */
   reply(json, type) {
-    if (this.speakers.length > 0) throw new Error('response still has open speakers')
-    if (this.listeners.length > 0) throw new Error('response still has open listeners')
+    if (this._speakers.length > 0) throw new Error('response still has open _speakers')
+    if (this._listeners.length > 0) throw new Error('response still has open listeners')
     super.reply(json, type)
   }
 
+  /**
+   * @param {String} speakerName
+   * @param {String} speakerType = SETTINGS.speakerTypeObject
+   * @param {Boolean} optional = false
+   * @returns {Speaker|Promise}
+   */
   createSpeaker(speakerName, speakerType = SETTINGS.speakerTypeObject, optional = false) {
     const speaker = new Speaker(speakerType)
     let successCb
@@ -34,12 +50,12 @@ export default class ServerResponse extends Response {
         if (err) throw err
         if (speakerType === SETTINGS.speakerTypeObject) {
           speaker._setStream(stream)
-          this.speakers.push(speaker)
-          speaker.once('ended', () => this.speakers.splice(this.speakers.indexOf(speaker), 1))
+          this._speakers.push(speaker)
+          speaker.once('ended', () => this._speakers.splice(this._speakers.indexOf(speaker), 1))
           if (!optional) successCb(speaker)
         } else if (speakerType === SETTINGS.speakerTypeRaw) {
-          this.speakers.push(stream)
-          stream.once('finish', () => this.speakers.splice(this.speakers.indexOf(stream), 1))
+          this._speakers.push(stream)
+          stream.once('finish', () => this._speakers.splice(this._speakers.indexOf(stream), 1))
           if (!optional) successCb(stream)
         } else throw new Error('unknown speaker type')
       },
@@ -47,6 +63,11 @@ export default class ServerResponse extends Response {
     return result
   }
 
+  /**
+   * @param {String} speakerName
+   * @param {String} speakerType = SETTINGS.speakerTypeObject
+   * @returns {ListenerPromise}
+   */
   createListener(speakerName, speakerType = SETTINGS.speakerTypeObject) {
     return new ListenerPromise(this, speakerName, speakerType)
   }

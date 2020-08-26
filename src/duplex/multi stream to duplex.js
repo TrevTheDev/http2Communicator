@@ -2,6 +2,11 @@ import { Duplex } from 'stream'
 import { randomBytes } from 'crypto'
 
 export default class MultiStreamToDuplex extends Duplex {
+  /**
+   * @param {ServerHttp2Stream} outStream
+   * @param {Object} defaultResponseHeaders
+   * @returns {MultiStreamToDuplex}
+   */
   constructor(outStream, defaultResponseHeaders) {
     super()
     this.outStream = outStream
@@ -29,18 +34,25 @@ export default class MultiStreamToDuplex extends Duplex {
     this.outStream.write('a') // firefox requires a body to resolve fetch promise
   }
 
-  addStream(stream, headers) {
-    if (this.resolveNextStream) this.resolveNextStream(stream)
-    else this.inStreams.push(stream)
-    if (stream !== null) {
-      stream.once('close', () => {
-        const index = this.inStreams.indexOf(stream)
+  /**
+   * @param {ServerHttp2Stream} inStream
+   * @param {Object} headers
+   */
+  addStream(inStream, headers) {
+    if (this.resolveNextStream) this.resolveNextStream(inStream)
+    else this.inStreams.push(inStream)
+    if (inStream !== null) {
+      inStream.once('close', () => {
+        const index = this.inStreams.indexOf(inStream)
         if (index > -1) this.inStreams.splice(index, 1)
       })
     }
     if (headers['http2-duplex-end'] === 'true') this.end()
   }
 
+  /**
+   * @returns {Promise}
+   */
   getReadableStream() {
     if (!this.nextStreamPromise) {
       this.nextStreamPromise = new Promise((resolve, reject) => {
@@ -62,6 +74,9 @@ export default class MultiStreamToDuplex extends Duplex {
     return this.nextStreamPromise
   }
 
+  /**
+   * @returns {Promise}
+   */
   getNextStream() {
     return new Promise((resolve, reject) => {
       if (this.inStreams.length > 0) {
@@ -91,6 +106,7 @@ export default class MultiStreamToDuplex extends Duplex {
       const inStream = await this.getReadableStream()
       let chunk
       // Use a loop to make sure we read all currently available data
+      // eslint-disable-next-line no-cond-assign
       while ((chunk = inStream.read()) !== null)
         if (!this.push(chunk)) throw new Error('not implemented')
 

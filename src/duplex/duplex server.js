@@ -2,6 +2,10 @@ import EventEmitter from 'events'
 import MultiStreamToDuplex from './multi stream to duplex.js'
 
 export default class DuplexServer extends EventEmitter {
+  /**
+   * @param {Object} defaultResponseHeaders
+   * @returns {DuplexServer}
+   */
   constructor(defaultResponseHeaders = {
     'Access-Control-Allow-Methods': '*',
     'Access-Control-Allow-Headers': '*',
@@ -15,6 +19,11 @@ export default class DuplexServer extends EventEmitter {
     this.sessions = new Map()
   }
 
+  /**
+   * @param {ServerHttp2Stream} stream
+   * @param {Object} headers
+   * @returns {Boolean}
+   */
   handleHttp2Streams(stream, headers/* , flags, rawHeaders */) {
     const { session } = stream
     let duplexes

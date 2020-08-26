@@ -18,11 +18,10 @@ const fromBytesInt32 = (numString) => {
 }
 /**
  * Streams JSON objects over streams
- * @extends EventEmitter
  */
 export default class ObjectStream extends EventEmitter {
   /**
-   * @param {NodeJS.ReadableStream|NodeJS.ReadWriteStream} stream
+   * @param {ClientHttp2Stream|ServerHttp2Stream|MultiStreamToDuplex} stream
    * @param {Object=} eventTarget
    * @returns {ObjectStream}
    */
@@ -63,7 +62,7 @@ export default class ObjectStream extends EventEmitter {
       stream.removeListener('data', dataCb)
       stream.removeListener('end', endCb)
       stream.removeListener('finish', finishCb)
-      stream.removeListener('closed', closedCb)
+      stream.removeListener('close', closedCb)
     }
     // const errorCb = (error) => this.eventTarget.emit('error', error)
     // const timeoutCb = () => this.eventTarget.emit('timeout')
@@ -72,7 +71,7 @@ export default class ObjectStream extends EventEmitter {
     stream.on('end', endCb)
     stream.on('finish', finishCb)
     // stream.on('aborted', abortedCb)
-    stream.on('closed', closedCb)
+    stream.on('close', closedCb)
 
     // stream.on('error', errorCb)
     // stream.on('timeout', timeoutCb)
@@ -87,7 +86,8 @@ export default class ObjectStream extends EventEmitter {
   }
 
   /**
-   * converts json to string and writes to stream
+   * converts json to string and adds its length in the first 4 bytes
+   * and then writes everything to stream
    * @param {object} json
    */
   send(json) {
@@ -100,14 +100,11 @@ export default class ObjectStream extends EventEmitter {
    * converts json to string and writes to stream
    * ends writable stream
    * throws if there are any outstanding promises
-   * @param {object} json
+   * @param {Object} json
    */
   end(json) {
     if (Object.keys(this.promiseDb).length > 0) throw new Error('Unhandled promises in objectStream')
-    if (json) {
-      const str = JSON.stringify(json)
-      const send = toBytesInt32(str.length) + str
-      this.stream.end(send)
-    } else this.stream.end()
+    if (json) this.send(json)
+    this.stream.end()
   }
 }

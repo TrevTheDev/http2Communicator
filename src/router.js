@@ -1,4 +1,9 @@
 export default class Router {
+  /**
+   * @param {Http2Server} http2Server
+   * @param {Array} routes
+   * @returns {Router}
+   */
   constructor(http2Server, routes = []) {
     this.http2Server = http2Server
     this.routes = []
@@ -7,17 +12,37 @@ export default class Router {
     routes.forEach((route) => this.addRoute(...route))
   }
 
+  /**
+   * @param {RegExp} pattern
+   * @param {Function} callback
+   * @param {Boolean} alwaysCallOnMatch - false
+   */
   addRoute(pattern, callback, alwaysCallOnMatch = false) {
     this.routes.push({ pattern, callback, alwaysCallOnMatch })
   }
 
+  /**
+   * @param {ServerHttp2Session} session
+   */
   newSession(session) {
     this.sessions.add(session)
-    session.once('close', () => this.sessions.delete(session))
+    const streamHandler = (stream, headers, flags, rawHeaders) => {
+      this.newStream(stream, headers, flags, rawHeaders)
+    }
+    session.on('stream', streamHandler)
 
-    session.on('stream', (stream, headers, flags, rawHeaders) => this.newStream(stream, headers, flags, rawHeaders))
+    session.once('close', () => {
+      session.removeListener('stream', streamHandler)
+      this.sessions.delete(session)
+    })
   }
 
+  /**
+   * @param {ServerHttp2Stream} stream
+   * @param {Object} headers
+   * @param {Number} flags
+   * @param {Array} rawHeaders
+   */
   newStream(stream, headers, flags, rawHeaders) {
     const matches = this.routes.filter((route) => headers[':path'].match(route.pattern))
     let result = false

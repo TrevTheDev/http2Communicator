@@ -137,11 +137,10 @@ const FileServer = (stream, requestHeader /* , flags, rawHeaders */) => {
     let filePath = path.join(SETTINGS.serveFilesFrom, pathname)
 
     try {
-      let stats = await fsPromises.stat(filePath)
-      if (stats.isDirectory()) {
+      const stats = await fsPromises.stat(filePath)
+      if (stats.isDirectory())
         filePath = path.join(filePath, 'index.html')
-        stats = await fsPromises.stat(filePath)
-      }
+        // stats = await fsPromises.stat(filePath)
 
       // send the requested file
       const responseHeader = {
@@ -160,7 +159,7 @@ const FileServer = (stream, requestHeader /* , flags, rawHeaders */) => {
       // not-modified
       if (isFresh(requestHeader, responseHeader))
         sendCode(304, '', responseHeader)
-      // prefail on conditional GET
+      // preFail on conditional GET
       else if (preFail(requestHeader, responseHeader))
         sendCode(412, '', responseHeader)
       else if (requestHeader[':method'] === 'HEAD')
