@@ -104,6 +104,7 @@ const isPreconditionFailure = (requestHeader, responseHeader) => {
  * @param {Object} responseHeader
  * @return {Boolean}
  */
+// eslint-disable-next-line max-len
 const preFail = (requestHeader, responseHeader) => isConditionalGet(requestHeader) && isPreconditionFailure(requestHeader, responseHeader)
 
 /**
@@ -121,8 +122,9 @@ const isFresh = (requestHeader, responseHeader) => fresh(requestHeader, {
 /**
  * Returns a middleware for serving static files
  *
- * @param {Object} opts
- * @return {Function}
+ * @param {ServerHttp2Stream} stream
+ * @param {Object} requestHeader
+ * @return {Boolean}
  */
 const FileServer = (stream, requestHeader /* , flags, rawHeaders */) => {
   const sendCode = (status, message = '', resHeaders = {}) => {

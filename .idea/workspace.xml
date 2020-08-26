@@ -11,31 +11,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="419cd6b4-32fa-4287-a7fc-34dbc157bc59" name="Default Changelist" comment="Before browser conversations">
-      <change beforePath="$PROJECT_DIR$/.idea/dictionaries/trevor.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dictionaries/trevor.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/http2Communicator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/http2Communicator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mash/mash.js" beforeDir="false" afterPath="$PROJECT_DIR$/mash/mash.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/base.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/base.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/listener promise.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/listener promise.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/object stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/object stream.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/response.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/response.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/server response.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/server response.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/speaker.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/speaker.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duplex browser/client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/duplex browser/client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duplex browser/dist/client.html" beforeDir="false" afterPath="$PROJECT_DIR$/src/duplex browser/dist/client.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duplex/duplex server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/duplex/duplex server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duplex/multi stream to duplex.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/duplex/multi stream to duplex.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/file server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/node client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/example usage.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/example usage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mash.test.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/mash.test.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.cjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -235,7 +212,7 @@
       <workItem from="1597632028797" duration="13994000" />
       <workItem from="1597646160605" duration="51258000" />
       <workItem from="1598237957164" duration="42613000" />
-      <workItem from="1598420416923" duration="4751000" />
+      <workItem from="1598420416923" duration="5091000" />
     </task>
     <task id="LOCAL-00001" summary="Progress!">
       <created>1589354365037</created>
@@ -328,7 +305,21 @@
       <option name="project" value="LOCAL" />
       <updated>1598414316082</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="Before browser conversations">
+      <created>1598425278822</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1598425278822</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Before browser conversations">
+      <created>1598425312189</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1598425312189</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -404,11 +395,11 @@
       <screen x="0" y="0" width="1707" height="960" />
     </state>
     <state x="520" y="311" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598420506793" />
-    <state x="591" y="236" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598414054203">
+    <state x="591" y="236" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598425258862">
       <screen x="0" y="0" width="1707" height="960" />
     </state>
     <state x="519" y="246" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1500.1000@0.0.1500.1000" timestamp="1596962199066" />
-    <state x="591" y="236" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598414054203" />
+    <state x="591" y="236" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598425258862" />
     <state x="658" y="345" key="#com.intellij.tools.ToolEditorDialog" timestamp="1597646015958">
       <screen x="0" y="0" width="1707" height="960" />
     </state>
@@ -430,10 +421,10 @@
     </state>
     <state x="150" y="256" width="593" height="472" key="#xdebugger.evaluate/0.0.1500.1000@0.0.1500.1000" timestamp="1596809378822" />
     <state x="623" y="106" width="593" height="646" key="#xdebugger.evaluate/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598411757493" />
-    <state x="597" y="318" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1598414335766">
+    <state x="597" y="318" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1598425333311">
       <screen x="0" y="0" width="1707" height="960" />
     </state>
-    <state x="597" y="318" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598414335766" />
+    <state x="597" y="318" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598425333311" />
     <state x="254" y="77" width="879" height="769" key="CommitChangelistDialog2" timestamp="1590562581459">
       <screen x="0" y="0" width="1707" height="960" />
     </state>
