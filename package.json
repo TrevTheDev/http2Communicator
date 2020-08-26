@@ -43,12 +43,16 @@
   },
   "dependencies": {
     "@trevthedev/mash": "0.0.22",
-    "uuid": "^8.3.0"
+    "devcert": "^1.1.2",
+    "etag": "^1.8.1",
+    "fresh": "^0.5.2",
+    "mime": "^2.4.6",
+    "range-parser": "^1.2.1"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "main": "src/server/server node.js",
+  "main": "src/comms server/server node.js",
   "exports": {
     ".": "./src/server/server node.js",
     "./client": "./src/ui/client node.js"

@@ -2,16 +2,16 @@
 // eslint-disable-next-line node/no-unpublished-import
 import chai from 'chai'
 import server from '../mash/mash.js'
-import ClientNode from '../src/ui/client node.js'
+import NodeClient from '../src/node client.js'
 
 const { expect } = chai
 
 let mash
 server.listen()
 
-describe('test server', () => {
+describe('test comms server', () => {
   before(() => {
-    mash = new ClientNode()
+    mash = new NodeClient()
   })
   after(async () => {
     await mash.end()
@@ -26,7 +26,7 @@ describe('test server', () => {
     expect(mash.objectStream.headers['content-type']).to.equal(
       'application/json; charset=utf-8',
     )
-    expect(result.output.path).to.equal(process.cwd())
+    expect(result.output.path.path).to.equal(process.cwd())
   })
 
   it('u().content', async () => {

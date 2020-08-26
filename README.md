@@ -58,7 +58,7 @@ server.on('question', async (serverResponse) => {
   // waits for client to respond to question
   console.log(`LOG STEP 7: ${JSON.stringify(await question)}`)
 
-  // establishes a new stream from client to server (opposite of Push Stream)
+  // establishes a new stream from client to comms server (opposite of Push Stream)
   // streams can also stream objects - known as Speaker
   const incomingStream = await serverResponse.createListener('uploadFile', 'raw')
   incomingStream.pipe(process.stdout)
@@ -78,27 +78,27 @@ server.listen()
 ### On the Client
 
 ```javascript
-import ClientNode from '@trevthedev/http2communicator/client'
+import NodeClient from '@trevthedev/http2communicator/client'
 
-const client = new ClientNode()
+const client = new NodeClient()
 
-// ask for something from the server (question)
+// ask for something from the comms server (question)
 const question = client.ask({ what: 'is', your: 'name', step: 1 })
 
-// handles any messages sent by server of type 'hello' to this question
+// handles any messages sent by comms server of type 'hello' to this question
 question.on('hello', (msg) => {
   console.log(`LOG STEP 2: ${JSON.stringify(msg)}`)
     
-  // sends message to server of type 'message' to this question
+  // sends message to comms server of type 'message' to this question
   question.say({ i: 'say', stuff: true, step: 4 })
 })
 
-// handles any questions from the  server to this question
+// handles any questions from the  comms server to this question
 // Response object is provided
 question.on('question', (response) => {
   console.log(`LOG STEP 3: ${JSON.stringify(response.json)}`)
     
-  // handles any messages sent by server of type 'more' to this response
+  // handles any messages sent by comms server of type 'more' to this response
   response.on('more', (msg) => {
     console.log(`LOG STEP 6: ${JSON.stringify(msg)}`)
       
@@ -108,16 +108,16 @@ question.on('question', (response) => {
     })
   })
     
-  // sends message to server of type 'message' to this response
+  // sends message to comms server of type 'message' to this response
   response.say({ i: 'also', say: 'stuff', step: 5 })
 })
 
-// stream established by server.createListener
+// stream established by comms server.createListener
 question.on('uploadFile', (stream) => {
   fs.createReadStream('package.json').pipe(stream)
 })
 
-// stream established by server.createSpeaker
+// stream established by comms server.createSpeaker
 question.on('downloadFile', (stream) => {
   stream.pipe(process.stdout)
 });
@@ -165,16 +165,16 @@ starts server listening
 
 - returns \<Promise\> Promise that gracefully closes all streams
 
-## ClientNode
+## NodeClient
 
 A client the connects to a ServerNode.
 
 Instantiation:
 
 ```javascript
-import ClientNode from '@TrevTheDev/http2Communicator/client'
+import NodeClient from '@TrevTheDev/http2Communicator/client'
 
-const client = new ClientNode(settings)
+const client = new NodeClient(settings)
 ```
 
 - `settings` \<object\> settings:

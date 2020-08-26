@@ -1,6 +1,6 @@
 import MashServer from '@trevthedev/mash'
-import { SETTINGS } from '../src/server/globals.js'
-import ServerNode from '../src/server/server node.js'
+import { SETTINGS } from '../src/other/globals.js'
+import ServerNode from '../src/comms server/server node.js'
 
 const mashServer = new MashServer()
 const server = new ServerNode()
