@@ -1,6 +1,6 @@
 import Question from './question.js'
 import Base from './base.js'
-import { SETTINGS } from '../globals.js'
+import { SETTINGS } from '../other/globals.js'
 
 export default class Response extends Base {
   constructor(objectStream, json) {

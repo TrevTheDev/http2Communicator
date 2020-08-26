@@ -1,6 +1,6 @@
 import Response from './response.js'
 import Speaker from './speaker.js'
-import { SETTINGS } from '../globals.js'
+import { SETTINGS } from '../other/globals.js'
 import ListenerPromise from './listener promise.js'
 
 export default class ServerResponse extends Response {
@@ -25,7 +25,7 @@ export default class ServerResponse extends Response {
 
     this.objectStream.stream.pushStream(
       {
-        ':path': SETTINGS.listenerPath,
+        ':path': SETTINGS.listenerStreams,
         'question-id': this.id,
         'speaker-name': speakerName,
         'speaker-type': speakerType,

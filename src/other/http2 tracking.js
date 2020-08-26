@@ -3,9 +3,7 @@ export const trackStream = (session, stream) => {
   streamId += 1
   stream.streamId = streamId
   session.trackedStreams[streamId] = stream
-  stream.once('close', () => {
-    delete session.trackedStreams[stream.streamId]
-  })
+  stream.once('close', () => delete session.trackedStreams[stream.streamId])
 }
 
 let sessionId = 0
@@ -25,33 +23,32 @@ export const trackServer = (CommsServer) => {
   server.on('session', (session) => trackSession(server, session))
 
   CommsServer.gracefulShutdown = async () => {
+    console.log('gracefulShutdown started')
     await Promise.all(
-      Object.values(server.trackedSessions).map(async (session) => {
-        await Promise.all(
-          Object.values(session.trackedStreams).map(async (stream) => {
-            await new Promise((resolve) => {
+      Object.values(server.trackedSessions).map((session) => new Promise((resolveSession) => {
+        (async () => {
+          await Promise.all(
+            Object.values(session.trackedStreams).map((stream) => new Promise((resolve) => {
               if (stream.closed) resolve()
-              else
-                stream.end(undefined, undefined, () => resolve())
-                // stream.close(undefined, () => resolve())
-            })
-          }),
-        )
-        // await new Promise((resolve) => {
-        //   if (session.closed) resolve()
-        //   else session.close(() => resolve())
-        // })
-      }),
+              else {
+                stream.close(undefined, () => {
+                  resolve()
+                })
+              }
+            })),
+          )
+          session.close(() => {
+            resolveSession()
+          })
+        })()
+      })),
     )
 
     return new Promise((resolve) => {
-      server.close(() => resolve())
+      server.close(() => {
+        resolve()
+        console.log('gracefulShutdown done')
+      })
     })
   }
-
-  // server.on(`stream`, (stream, headers, flags) =>
-  //   console.log(`${tag} streamed`)
-  // )
-
-  // server.on(`close`, () => {})
 }

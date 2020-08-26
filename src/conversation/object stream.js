@@ -22,8 +22,8 @@ const fromBytesInt32 = (numString) => {
  */
 export default class ObjectStream extends EventEmitter {
   /**
-   * @param {(stream.Readable|stream.Duplex)} stream
-   * @param {object=} eventTarget
+   * @param {NodeJS.ReadableStream|NodeJS.ReadWriteStream} stream
+   * @param {Object=} eventTarget
    * @returns {ObjectStream}
    */
   constructor(stream, eventTarget) {
@@ -41,7 +41,8 @@ export default class ObjectStream extends EventEmitter {
     }
 
     let data = ''
-    stream.on('data', (chunk) => {
+
+    const dataCb = (chunk) => {
       data += chunk.toString()
       let length = fromBytesInt32(data.substring(0, 4))
       let loop = 0
@@ -52,21 +53,27 @@ export default class ObjectStream extends EventEmitter {
         length = data.length === 0 ? undefined : fromBytesInt32(data.substring(0, 4))
       }
       loop += 1
-      if (loop > 3)
-        throw new Error(`something wrong decoding data: ${data}`)
-    })
-
+      if (loop > 3) throw new Error(`something wrong decoding data: ${data}`)
+    }
     const endCb = () => this.eventTarget.emit('end')
     const finishCb = () => this.eventTarget.emit('finish')
     // const abortedCb = () => this.eventTarget.emit('aborted')
-    const closedCb = (code) => this.eventTarget.emit('closed', code)
+    const closedCb = (code) => {
+      this.eventTarget.emit('closed', code)
+      stream.removeListener('data', dataCb)
+      stream.removeListener('end', endCb)
+      stream.removeListener('finish', finishCb)
+      stream.removeListener('closed', closedCb)
+    }
     // const errorCb = (error) => this.eventTarget.emit('error', error)
     // const timeoutCb = () => this.eventTarget.emit('timeout')
 
+    stream.on('data', dataCb)
     stream.on('end', endCb)
     stream.on('finish', finishCb)
     // stream.on('aborted', abortedCb)
     stream.on('closed', closedCb)
+
     // stream.on('error', errorCb)
     // stream.on('timeout', timeoutCb)
 
@@ -97,7 +104,10 @@ export default class ObjectStream extends EventEmitter {
    */
   end(json) {
     if (Object.keys(this.promiseDb).length > 0) throw new Error('Unhandled promises in objectStream')
-    if (json) this.send(json)
-    this.stream.end()
+    if (json) {
+      const str = JSON.stringify(json)
+      const send = toBytesInt32(str.length) + str
+      this.stream.end(send)
+    } else this.stream.end()
   }
 }

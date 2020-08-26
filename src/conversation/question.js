@@ -1,8 +1,8 @@
-import { v4 as uuid } from 'uuid'
+import { randomBytes } from 'crypto'
 import Base from './base.js'
 import Response from './response.js'
 import Speaker from './speaker.js'
-import { SETTINGS } from '../globals.js'
+import { SETTINGS } from '../other/globals.js'
 
 export default class Question extends Base {
   /**
@@ -13,7 +13,7 @@ export default class Question extends Base {
    */
   constructor(objectStream, json, response) {
     super(objectStream, json)
-    this.id = uuid()
+    this.id = randomBytes(64).toString('base64')
     this.response = response
     this.speakers = []
   }
@@ -34,7 +34,7 @@ export default class Question extends Base {
   _createSpeaker(msg) {
     const stream = this.objectStream.stream.session.request(
       {
-        ':path': SETTINGS.listenerPath,
+        ':path': SETTINGS.listenerStreams,
         ':method': 'PUT',
         'speaker-name': msg.speakerName,
         'speaker-type': msg.speakerType,

@@ -9,13 +9,18 @@ export const setDefaultSettings = (settings) => {
       rejectUnauthorized: false,
       enablePush: true,
     },
-    serverPath: '/http2Communicator',
-    listenerPath: '/http2Stream',
-    certDir: './dev certificate',
-    keyFile: './dev certificate/selfsigned.key',
-    certFile: './dev certificate/selfsigned.crt',
-    certArgs: '/C=US/ST=Denial/L=Springfield/O=Dis/CN=*',
-    log: 'all',
+
+    browserStreams: '/browserStreams',
+    nodeStreams: '/nodeStreams',
+    listenerStreams: '/listenerStreams',
+    serveFilesFrom: `${process.cwd()}/src/duplex browser/dist`,
+
+    // certDir: './dev certificate',
+    // keyFile: './dev certificate/selfsigned.key',
+    // certFile: './dev certificate/selfsigned.crt',
+    // certArgs: '/C=US/ST=Denial/L=Springfield/O=Dis/CN=*',
+
+    log: 'verbose',
 
     replyType: 'reply',
     cancelledType: 'cancelled',

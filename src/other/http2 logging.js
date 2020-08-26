@@ -1,18 +1,13 @@
 /* eslint-disable no-unused-vars */
 
-const HTTP2_HEADER_METHOD = ':method'
-const HTTP2_HEADER_PATH = ':path'
-const HTTP2_HEADER_STATUS = ':status'
-const HTTP2_HEADER_CONTENT_TYPE = 'content-type'
-
 let streamId = 0
 
-export const logStream = (stream, tag, log, headersToLog) => {
+export const logStream = (stream, headersToLog, tag, log) => {
   if (stream.logId) { console.log('two many times '); return }
   streamId += 1
   stream.logId = streamId
   if (!['yes', 'verbose', 'all'].includes(log)) return
-  const extra = headersToLog ? ` method: ${headersToLog[HTTP2_HEADER_METHOD]} path: ${headersToLog[HTTP2_HEADER_PATH]}` : ''
+  const extra = headersToLog ? ` ${headersToLog[':method']}=>${headersToLog[':path']}` : ''
   console.log(`${tag} stream ${stream.logId}${extra}`)
 
   if (!['verbose', 'all'].includes(log)) return
@@ -32,8 +27,8 @@ export const logStream = (stream, tag, log, headersToLog) => {
 
   stream.on('drain', () => console.log(`${tag} stream ${stream.logId} drained`))
   stream.on('finish', () => console.log(`${tag} stream ${stream.logId} finished`))
-  stream.on('pipe', (sourceReadableStream) => console.log(`${tag} stream ${stream.logId} piped`))
-  stream.on('unpipe', (sourceReadableStream) => console.log(`${tag} stream ${stream.logId} unpiped`))
+  stream.on('pipe', (/* sourceReadableStream */) => console.log(`${tag} stream ${stream.logId} piped`))
+  stream.on('unpipe', (/* sourceReadableStream */) => console.log(`${tag} stream ${stream.logId} unpiped`))
   stream.on('end', () => console.log(`${tag} stream ${stream.logId} ended`))
   stream.on('pause', () => console.log(`${tag} stream ${stream.logId} paused`))
   // stream.on(`readable`, () => console.log(`${tag} stream readabled`))
@@ -62,12 +57,12 @@ export const logSession = (session, tag, log) => {
   sessionId += 1
   session.logId = sessionId
   if (!['yes', 'verbose', 'all'].includes(log)) return
-  console.log(`${tag} session ${session.logId}`)
-  session.on('stream', (stream, headers, flags, rawHeaders) => logStream(stream, tag, log, headers))
+  // console.log(`${tag} session ${session.logId}`)
+  session.on('stream', (stream, headers/* , flags, rawHeaders */) => logStream(stream, headers, `${tag} session ${session.logId}`, log))
 
   if (!['verbose', 'all'].includes(log)) return
   session.on('close', () => console.log(`${tag} session ${session.logId} closed`))
-  session.on('connect', (http2Session, socket) => console.log(`${tag} session ${session.logId} connect`))
+  session.on('connect', (http2Session/* , socket */) => console.log(`${tag} session ${http2Session.logId} connect`))
   session.on('error', (error) => console.log(`${tag} session ${session.logId} errored: ${error}`))
   session.on('frameError', (type, code, id) => console.log(
     `${tag} session ${session.logId} frameErrored: ${type}:${code}:${id}`,
@@ -88,28 +83,27 @@ export const logSession = (session, tag, log) => {
 
 export const logServer = (server, tag = 'server', log) => {
   if (!['yes', 'verbose', 'all'].includes(log)) return
-  server.on('request', (request, response) => {
-    console.log(`${(new Date()).toLocaleString()}: BY: ${request.socket.remoteAddress}: ${tag} requested: ${request.headers[':method']}=>${request.headers[':path']}`)
+  server.on('request', (request/* , response */) => {
+    console.log(`${tag} requested: ${(new Date()).toLocaleString()}: BY: ${request.socket.remoteAddress}: ${tag} requested: ${request.headers[':method']}=>${request.headers[':path']}`)
   })
   server.on('session', (session) => logSession(session, tag, log))
 
   if (!['verbose', 'all'].includes(log)) return
-  server.on('checkContinue', (request, response) => console.log(`${tag} checkContinued`))
+  server.on('checkContinue', (/* request, response */) => console.log(`${tag} checkContinued`))
   server.on('request', (request, response) => {
-    console.log(`${tag} requested`)
     request.on('aborted', () => console.log(`${tag} request aborted`))
     request.on('close', () => console.log(`${tag} request closed`))
     response.on('close', () => console.log(`${tag} response closed`))
     response.on('finish', () => console.log(`${tag} response finished`))
   })
   server.on('sessionError', () => console.log(`${tag} sessionErrored`))
-  server.on('stream', (stream, headers, flags) => console.log(`${tag} streamed`))
+  // server.on('stream', (stream, headers, flags) => console.log(`${tag} streamed`))
   server.on('timeout', () => console.log(`${tag} timedOut`))
 
   server.on('unknownProtocol', () => console.log(`${tag} unknownProtocol`))
 
   server.on('close', () => console.log(`${tag} closed`))
-  server.on('connection', (socket) => console.log(`${tag} connectioned`))
+  server.on('connection', (/* socket */) => console.log(`${tag} connectioned`))
   server.on('error', (error) => console.log(`${tag} errored: ${error}`))
   server.on('listening', () => console.log(`${tag} listening`))
 }

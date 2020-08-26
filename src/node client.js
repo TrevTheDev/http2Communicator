@@ -1,11 +1,11 @@
 import EventEmitter from 'events'
 import http2 from 'http2'
-import ObjectStream from '../server/conversation/object stream.js'
-import { logStream, logSession } from '../server/http2 logging.js'
-import Question from '../server/conversation/question.js'
-import { SETTINGS, setDefaultSettings } from '../server/globals.js'
+import ObjectStream from './conversation/object stream.js'
+import { logStream, logSession } from './other/http2 logging.js'
+import Question from './conversation/question.js'
+import { SETTINGS, setDefaultSettings } from './other/globals.js'
 
-export default class ClientNode extends EventEmitter {
+export default class NodeClient extends EventEmitter {
   constructor(settings) {
     super()
     setDefaultSettings(settings)
@@ -14,7 +14,7 @@ export default class ClientNode extends EventEmitter {
 
     this.stream = this.session.request({
       ':method': 'POST',
-      ':path': SETTINGS.serverPath,
+      ':path': SETTINGS.nodeStreams,
       'content-type': 'application/json',
     })
 
@@ -28,6 +28,8 @@ export default class ClientNode extends EventEmitter {
         this.objectStream.promiseDb[originalQuestionId]._handleMessage(object)
       else if (this.objectStream.promiseDb[questionId])
         this.objectStream.promiseDb[questionId]._handleMessage(object)
+      // else if (object.type === 'done')
+      //   console.log('done')
       else throw new Error('unknown object')
     })
 
@@ -53,11 +55,13 @@ export default class ClientNode extends EventEmitter {
   ask(json) { return new Question(this.objectStream, json) }
 
   end() {
-    this.objectStream.end({ type: 'done' })
     return new Promise((resolve) => {
-      this.stream.close(undefined, () => {
-        this.session.close(() => resolve())
+      this.once('end', () => {
+        this.stream.close(undefined, () => {
+          this.session.close(() => resolve())
+        })
       })
+      this.objectStream.end({ type: 'done' })
     })
   }
 }

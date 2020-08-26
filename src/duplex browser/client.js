@@ -2,9 +2,11 @@
 import duplexStream from './client duplex stream.js'
 
 const doit = async () => {
-  const duplex = await duplexStream('https://localhost:7000/example')
-
-  document.addEventListener('keypress', (ev) => duplex.write(ev.key))
+  const duplex = await duplexStream('https://192.168.1.70:7000/browserStreams')
+  document.addEventListener('keypress', (ev) => {
+    console.log(ev.key)
+    duplex.write(ev.key)
+  })
 
   duplex.on('readable', () => {
     let buf
