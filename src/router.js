@@ -1,13 +1,13 @@
-export default class Router {
+/** @private */
+class Router {
   /**
-   * @param {Http2Server} http2Server
+   * @param {module:http2.Http2SecureServer} http2Server
    * @param {Array} routes
    * @returns {Router}
    */
   constructor(http2Server, routes = []) {
     this.http2Server = http2Server
     this.routes = []
-    this.sessions = new Set()
     this.http2Server.on('session', (session) => this.newSession(session))
     routes.forEach((route) => this.addRoute(...route))
   }
@@ -25,16 +25,9 @@ export default class Router {
    * @param {ServerHttp2Session} session
    */
   newSession(session) {
-    this.sessions.add(session)
-    const streamHandler = (stream, headers, flags, rawHeaders) => {
-      this.newStream(stream, headers, flags, rawHeaders)
-    }
+    const streamHandler = (...args) => this.newStream(...args)
     session.on('stream', streamHandler)
-
-    session.once('close', () => {
-      session.removeListener('stream', streamHandler)
-      this.sessions.delete(session)
-    })
+    session.once('close', () => session.removeListener('stream', streamHandler))
   }
 
   /**
@@ -44,7 +37,8 @@ export default class Router {
    * @param {Array} rawHeaders
    */
   newStream(stream, headers, flags, rawHeaders) {
-    const matches = this.routes.filter((route) => headers[':path'].match(route.pattern))
+    const requestPath = headers[':path']
+    const matches = this.routes.filter((route) => requestPath.match(route.pattern))
     let result = false
     matches.forEach((route) => {
       if (!result)
@@ -53,6 +47,7 @@ export default class Router {
         route.callback(stream, headers, flags, rawHeaders)
     })
     if (!result)
-      throw new Error(`unmatched router path: ${headers[':path']}`)
+      throw new Error(`unmatched router path: ${requestPath}`)
   }
 }
+export default Router

@@ -2,17 +2,18 @@ import EventEmitter from 'events'
 import http2 from 'http2'
 import ObjectStream from './conversation/object stream.js'
 import { logStream, logSession } from './other/http2 logging.js'
-import Question from './conversation/question.js'
-import { SETTINGS, setDefaultSettings } from './other/globals.js'
+import { Question } from './conversation/question.js'
+import { SETTINGS, MSG_TYPES, setDefaultSettings } from './other/globals.js'
 
-export default class NodeClient extends EventEmitter {
+/** @private */
+class NodeClient extends EventEmitter {
   /**
    * @param {SETTINGS} settings
    * @returns {NodeClient}
    */
   constructor(settings) {
     super()
-    setDefaultSettings(settings)
+    setDefaultSettings(settings, false)
     this.session = http2.connect(SETTINGS.serverAddress, SETTINGS.http2ConnectionOptions)
     logSession(this.session, 'client', SETTINGS.log)
 
@@ -41,7 +42,7 @@ export default class NodeClient extends EventEmitter {
       pushedStream.on('push', () => {
         const question = this.objectStream.promiseDb[requestHeaders['question-id']]
         if (question) {
-          if (requestHeaders['speaker-type'] === SETTINGS.speakerTypeRaw)
+          if (requestHeaders['speaker-type'] === MSG_TYPES.raw)
             question.emit(requestHeaders['speaker-name'], pushedStream)
           else {
             const oStream = new ObjectStream(pushedStream)
@@ -76,3 +77,5 @@ export default class NodeClient extends EventEmitter {
     })
   }
 }
+
+export default NodeClient

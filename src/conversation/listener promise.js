@@ -1,5 +1,5 @@
-import { randomBytes } from 'crypto'
-import { SETTINGS } from '../other/globals.js'
+import { createUid } from '../other/shared functions.js'
+import { MSG_TYPES } from '../other/globals.js'
 
 export const listeners = {}
 
@@ -18,8 +18,8 @@ export default class ListenerPromise {
 
   // can only handle one .then which should be okay.
   then(onSuccess, onFail) {
-    const uid = randomBytes(64).toString('base64')
-    listeners[uid] = this
+    const id = createUid()
+    listeners[id] = this
     this.response._listeners.push(this)
 
     try {
@@ -33,20 +33,20 @@ export default class ListenerPromise {
           'content-type': 'application/json; charset=utf-8',
         })
 
-        delete listeners[uid]
+        delete listeners[id]
         if (onSuccess) onSuccess(stream)
         else stream.close()
       }
 
       this.reject = (msg) => {
-        delete listeners[uid]
+        delete listeners[id]
         this.response._listeners.splice(this.response._listeners.indexOf(this), 1)
         if (onFail) onFail(msg)
       }
 
       this.response.say({
-        listenerId: uid, speakerName: this.speakerName, speakerType: this.speakerType,
-      }, SETTINGS.listeningType)
+        listenerId: id, speakerName: this.speakerName, speakerType: this.speakerType,
+      }, MSG_TYPES.listening)
     } catch (e) {
       if (onFail) onFail(e)
       else throw e

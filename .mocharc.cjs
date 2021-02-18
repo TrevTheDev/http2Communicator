@@ -1,7 +1,5 @@
 module.exports = {
-  //require: './node_modules/esm',
-  // slow: 1000,
+  exit: true,
   timeout: 600000,
-  spec: 'tests/**/*.test.mjs',
-  //watchFiles: ['tests/**/*.test.mjs']
+  spec: ['tests/**/*.test.js','tests/**/*.test.mjs'],
 }

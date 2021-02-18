@@ -1,6 +1,6 @@
-import Response from './response.js'
+import { Response } from './question.js'
 import Speaker from './speaker.js'
-import { SETTINGS } from '../other/globals.js'
+import { SETTINGS, MSG_TYPES } from '../other/globals.js'
 import ListenerPromise from './listener promise.js'
 
 export default class ServerResponse extends Response {
@@ -32,7 +32,7 @@ export default class ServerResponse extends Response {
    * @param {Boolean} optional = false
    * @returns {Speaker|Promise}
    */
-  createSpeaker(speakerName, speakerType = SETTINGS.speakerTypeObject, optional = false) {
+  createSpeaker(speakerName, speakerType = MSG_TYPES.object, optional = false) {
     const speaker = new Speaker(speakerType)
     let successCb
     const result = optional
@@ -48,12 +48,12 @@ export default class ServerResponse extends Response {
       },
       (err, stream) => {
         if (err) throw err
-        if (speakerType === SETTINGS.speakerTypeObject) {
+        if (speakerType === MSG_TYPES.object) {
           speaker._setStream(stream)
           this._speakers.push(speaker)
           speaker.once('ended', () => this._speakers.splice(this._speakers.indexOf(speaker), 1))
           if (!optional) successCb(speaker)
-        } else if (speakerType === SETTINGS.speakerTypeRaw) {
+        } else if (speakerType === MSG_TYPES.raw) {
           this._speakers.push(stream)
           stream.once('finish', () => this._speakers.splice(this._speakers.indexOf(stream), 1))
           if (!optional) successCb(stream)
@@ -68,7 +68,7 @@ export default class ServerResponse extends Response {
    * @param {String} speakerType = SETTINGS.speakerTypeObject
    * @returns {ListenerPromise}
    */
-  createListener(speakerName, speakerType = SETTINGS.speakerTypeObject) {
+  createListener(speakerName, speakerType = MSG_TYPES.object) {
     return new ListenerPromise(this, speakerName, speakerType)
   }
 }

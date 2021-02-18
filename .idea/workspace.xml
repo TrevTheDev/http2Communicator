@@ -1,19 +1,102 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="BranchesTreeState">
     <expand>
       <path>
         <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
         <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
       </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
     </expand>
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="419cd6b4-32fa-4287-a7fc-34dbc157bc59" name="Default Changelist" comment="Some errors fixed">
+    <list default="true" id="29bd053b-1414-42c9-bfc1-66225f811fcd" name="Default Changelist" comment="Before changes">
+      <change afterPath="$PROJECT_DIR$/.esdoc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.jsdoc.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/browser/browser client.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/client.test.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/dist/http2 duplex stream.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/esbuild.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/Fn/conversation.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/Fn/conversations.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/Fn/fnLibrary.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/Fn/function bx.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/Fn/function parser.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/Fn/streams.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/Fn/utils.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/fluture.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/promise.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/pullapi.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/outdated/tracker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/other/shared functions.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/answer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/browser get object from stream.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/conversation db.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/enhanced stream.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/get object from streams.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/http error.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/message router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/question.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/server conversation handler.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/server streams router.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/pull/shared base.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/async functions.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/browser client.test.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/node to browser shims.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tests/server.test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/http2Communicator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/http2Communicator.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.mocharc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/.mocharc.cjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/conversation/base.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/conversation/listener promise.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/conversation/object stream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/conversation/question.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/conversation/response.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/conversation/server response.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/conversation/speaker.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/duplex/duplex stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/browser/duplex/duplex stream.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/other/globals.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/other/http2 logging.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/browser/other/http2 tracking.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conversation/listener promise.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/listener promise.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conversation/object stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/object stream.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conversation/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/question.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conversation/response.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/conversation/server response.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/server response.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/duplex browser/client duplex stream.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/duplex browser/client.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/duplex browser/dist/client.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/duplex/duplex server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/duplex/duplex server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/duplex/multi stream to duplex.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/duplex/multi stream to duplex.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/file server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/node client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/node client.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/other/globals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/other/globals.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/other/http2 logging.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/other/http2 logging.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/example usage.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/example usage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/mash.test.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/mash.tst.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/webpack.config.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.cjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -24,87 +107,94 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="JavaScript File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="JsBowerSettings">
+    <node-interpreter value="project" />
+    <bower-package value="" />
+    <bower.json value="" />
+  </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
-  <component name="ProjectId" id="1bNcuZHG3n9gJGb74N9swTg8dUg" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1giEQAET2BDLtwDxw2v1iEYz6NS" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="add_unversioned_files" value="$PROJECT_DIR$/logs/error.log" />
-    <property name="com.intellij.ide.scratch.LRUPopupBuilder$1/New Scratch File" value="ECMAScript 6" />
-    <property name="javascript.nodejs.core.library.configured.version" value="14.5.0" />
-    <property name="javascript.nodejs.core.library.typings.version" value="14.0.27" />
+    <property name="javascript.nodejs.core.library.configured.version" value="15.8.0" />
+    <property name="javascript.nodejs.core.library.typings.version" value="14.14.28" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/pull" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.standard" value="project" />
-    <property name="node.js.selected.package.eslint" value="$PROJECT_DIR$/node_modules/eslint" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs.mocha.mocha_node_package_dir" value="$PROJECT_DIR$/node_modules/mocha" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
     <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="settings.nodejs" />
+    <property name="settings.editor.selected.configurable" value="JavaScript.Libraries" />
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="two.files.diff.last.used.file" value="$PROJECT_DIR$/src/other/globals.js" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/src/server/conversation" />
+      <recent name="$PROJECT_DIR$/src/pull" />
+      <recent name="$PROJECT_DIR$/dist" />
+      <recent name="$PROJECT_DIR$/tests" />
+      <recent name="$PROJECT_DIR$/.idea" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/dist" />
+      <recent name="$PROJECT_DIR$/outdated" />
       <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/browser/duplex" />
-      <recent name="$PROJECT_DIR$/browser" />
-      <recent name="$PROJECT_DIR$/src/other" />
+      <recent name="$PROJECT_DIR$/src/pull/outdated" />
+      <recent name="$PROJECT_DIR$/src/pull" />
+      <recent name="$PROJECT_DIR$/.old" />
     </key>
   </component>
-  <component name="RunManager" selected="Node.js.server.js">
-    <configuration name="Unnamed" type="FirefoxRemoteDebugType" nameIsGenerated="true" port="7700">
-      <method v="2">
-        <option name="LaunchBrowser.Before.Run" browser="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" url="192.168.1.70:7000" withDebugger="true" />
-      </method>
-    </configuration>
-    <configuration name="Unnamed JavaScript" type="JavascriptDebugType" engineId="a7bb68e0-33c0-4d6f-a81a-aac1fdb870c8" uri="192.168.1.70:7000">
+  <component name="RunManager" selected="Node.js.server.test.js">
+    <configuration name="scratch_3.mjs" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.mjs" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="server.js JavaScript" type="JavascriptDebugType" uri="https://192.168.1.70:7000/client.html">
+    <configuration name="scratch.mjs" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch.mjs" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="example usage.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/tests/example usage.js" working-dir="$PROJECT_DIR$/tests">
+    <configuration name="server.js" type="NodeJSConfigurationType" nameIsGenerated="true" path-to-js-file="src/server.js" working-dir="$PROJECT_DIR$">
       <method v="2" />
     </configuration>
-    <configuration name="scratch_3.es6" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$APPLICATION_CONFIG_DIR$/scratches/scratch_3.es6" working-dir="$PROJECT_DIR$">
+    <configuration name="server.test.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="tests/server.test.js" working-dir="$PROJECT_DIR$/">
       <method v="2" />
     </configuration>
-    <configuration name="server node.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/comms server/server node.js" working-dir="$PROJECT_DIR$/src/comms server">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
       <method v="2" />
     </configuration>
-    <configuration name="server.js" type="NodeJSConfigurationType" temporary="true" nameIsGenerated="true" path-to-js-file="$PROJECT_DIR$/src/server.js" working-dir="$PROJECT_DIR$/">
-      <EXTENSION ID="com.jetbrains.nodejs.run.NodeJSStartBrowserRunConfigurationExtension">
-        <browser start="true" with-js-debugger="true" url="https://192.168.1.70:7000/client.html" />
-      </EXTENSION>
-      <method v="2" />
-    </configuration>
-    <configuration name="test server.u()" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
+    <configuration name="async tests" type="mocha-javascript-test-runner" temporary="true" nameIsGenerated="true">
       <node-interpreter>project</node-interpreter>
       <node-options />
       <mocha-package>$PROJECT_DIR$/node_modules/mocha</mocha-package>
@@ -112,259 +202,93 @@
       <pass-parent-env>true</pass-parent-env>
       <ui>bdd</ui>
       <extra-mocha-options />
-      <test-kind>TEST</test-kind>
-      <test-file>$PROJECT_DIR$/tests/mash.test.mjs</test-file>
+      <test-kind>SUITE</test-kind>
+      <test-file>$PROJECT_DIR$/tests/async functions.test.js</test-file>
       <test-names>
-        <name value="test server" />
-        <name value="u()" />
+        <name value="async tests" />
       </test-names>
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Firefox Remote.Unnamed" />
-      <item itemvalue="JavaScript Debug.Unnamed JavaScript" />
-      <item itemvalue="JavaScript Debug.server.js JavaScript" />
-      <item itemvalue="Mocha.test server.u()" />
+      <item itemvalue="Mocha.async tests" />
       <item itemvalue="Node.js.server.js" />
-      <item itemvalue="Node.js.server node.js" />
-      <item itemvalue="Node.js.scratch_3.es6" />
-      <item itemvalue="Node.js.example usage.js" />
+      <item itemvalue="Node.js.scratch_3.mjs" />
+      <item itemvalue="Node.js.scratch.mjs" />
+      <item itemvalue="Node.js.server.test.js" />
+      <item itemvalue="npm.build" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Node.js.server.js" />
-        <item itemvalue="Node.js.example usage.js" />
-        <item itemvalue="Node.js.scratch_3.es6" />
-        <item itemvalue="Mocha.test server.u()" />
-        <item itemvalue="Node.js.server node.js" />
+        <item itemvalue="Node.js.server.test.js" />
+        <item itemvalue="Mocha.async tests" />
+        <item itemvalue="npm.build" />
+        <item itemvalue="Node.js.scratch.mjs" />
+        <item itemvalue="Node.js.scratch_3.mjs" />
       </list>
     </recent_temporary>
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="project-level" UseSingleDictionary="true" transferred="true" />
-  <component name="SvnConfiguration">
-    <configuration />
-  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="419cd6b4-32fa-4287-a7fc-34dbc157bc59" name="Default Changelist" comment="" />
-      <created>1588476214649</created>
+      <changelist id="29bd053b-1414-42c9-bfc1-66225f811fcd" name="Default Changelist" comment="" />
+      <created>1598588996404</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1588476214649</updated>
-      <workItem from="1588476220741" duration="367000" />
-      <workItem from="1588477158803" duration="1636000" />
-      <workItem from="1588478819406" duration="28034000" />
-      <workItem from="1588575587768" duration="228000" />
-      <workItem from="1588575842336" duration="8586000" />
-      <workItem from="1588658773873" duration="23162000" />
-      <workItem from="1588823232147" duration="23235000" />
-      <workItem from="1588926028220" duration="7653000" />
-      <workItem from="1589012657276" duration="14055000" />
-      <workItem from="1589203180203" duration="5343000" />
-      <workItem from="1589245349446" duration="33549000" />
-      <workItem from="1589345500830" duration="3185000" />
-      <workItem from="1589354332300" duration="180000" />
-      <workItem from="1589506247318" duration="1974000" />
-      <workItem from="1589508747451" duration="198000" />
-      <workItem from="1589509019721" duration="1081000" />
-      <workItem from="1589510454927" duration="751000" />
-      <workItem from="1589511231519" duration="89000" />
-      <workItem from="1589511346338" duration="62000" />
-      <workItem from="1589511428611" duration="7942000" />
-      <workItem from="1589537608290" duration="339000" />
-      <workItem from="1589537979634" duration="294000" />
-      <workItem from="1589538308998" duration="3157000" />
-      <workItem from="1589601942205" duration="5188000" />
-      <workItem from="1589691004204" duration="290000" />
-      <workItem from="1589691325194" duration="97906000" />
-      <workItem from="1590468492746" duration="876000" />
-      <workItem from="1590470161361" duration="4128000" />
-      <workItem from="1590474350138" duration="7079000" />
-      <workItem from="1590497610822" duration="696000" />
-      <workItem from="1590498348500" duration="9801000" />
-      <workItem from="1590566588018" duration="22000" />
-      <workItem from="1590656921121" duration="6627000" />
-      <workItem from="1590804575766" duration="369000" />
-      <workItem from="1590805033065" duration="7506000" />
-      <workItem from="1591082943874" duration="61000" />
-      <workItem from="1591083114601" duration="98000" />
-      <workItem from="1591086459520" duration="10314000" />
-      <workItem from="1594005153548" duration="2498000" />
-      <workItem from="1594271727200" duration="398000" />
-      <workItem from="1594272156788" duration="3000" />
-      <workItem from="1594272724227" duration="7000" />
-      <workItem from="1594272752296" duration="622000" />
-      <workItem from="1594898564926" duration="708000" />
-      <workItem from="1594899886364" duration="599000" />
-      <workItem from="1595121260562" duration="28000" />
-      <workItem from="1596779484158" duration="2742000" />
-      <workItem from="1596800782463" duration="4874000" />
-      <workItem from="1596806970574" duration="2704000" />
-      <workItem from="1596856723429" duration="1720000" />
-      <workItem from="1596957952785" duration="1455000" />
-      <workItem from="1596960786058" duration="814000" />
-      <workItem from="1596961932290" duration="2872000" />
-      <workItem from="1596965784806" duration="454000" />
-      <workItem from="1596966280229" duration="730000" />
-      <workItem from="1597024284519" duration="7143000" />
-      <workItem from="1597037240598" duration="5799000" />
-      <workItem from="1597116409105" duration="203000" />
-      <workItem from="1597116638705" duration="42046000" />
-      <workItem from="1597483459135" duration="2445000" />
-      <workItem from="1597632028797" duration="13994000" />
-      <workItem from="1597646160605" duration="51258000" />
-      <workItem from="1598237957164" duration="42613000" />
-      <workItem from="1598420416923" duration="6562000" />
+      <updated>1598588996404</updated>
+      <workItem from="1598588998536" duration="902000" />
+      <workItem from="1598589940699" duration="7000" />
+      <workItem from="1598590132871" duration="1394000" />
+      <workItem from="1598591574541" duration="184000" />
+      <workItem from="1598591814690" duration="9029000" />
+      <workItem from="1598604452519" duration="31243000" />
+      <workItem from="1599105309412" duration="488000" />
+      <workItem from="1599189064749" duration="20985000" />
+      <workItem from="1599788750432" duration="5181000" />
+      <workItem from="1600057314105" duration="100000" />
+      <workItem from="1600140430225" duration="6576000" />
+      <workItem from="1600315560190" duration="33000" />
+      <workItem from="1600315706100" duration="47842000" />
+      <workItem from="1600931606265" duration="122100000" />
+      <workItem from="1601965156366" duration="20907000" />
+      <workItem from="1602214021202" duration="46976000" />
+      <workItem from="1602724961015" duration="91418000" />
+      <workItem from="1604057553891" duration="69038000" />
+      <workItem from="1604979894014" duration="55742000" />
+      <workItem from="1605493247622" duration="19246000" />
+      <workItem from="1605684418373" duration="4469000" />
+      <workItem from="1605755100564" duration="20934000" />
+      <workItem from="1606098063344" duration="214000" />
+      <workItem from="1606098317761" duration="28454000" />
+      <workItem from="1606438393199" duration="3337000" />
+      <workItem from="1606452599358" duration="28819000" />
+      <workItem from="1606806241547" duration="7608000" />
+      <workItem from="1610588664276" duration="22000" />
+      <workItem from="1610588852708" duration="1700000" />
+      <workItem from="1610590808548" duration="3414000" />
+      <workItem from="1611031199313" duration="4676000" />
+      <workItem from="1611039414616" duration="3662000" />
+      <workItem from="1612319681303" duration="42000" />
+      <workItem from="1612319764404" duration="57879000" />
+      <workItem from="1612513582791" duration="18773000" />
+      <workItem from="1612662819463" duration="70320000" />
+      <workItem from="1613096764011" duration="91985000" />
     </task>
-    <task id="LOCAL-00001" summary="Progress!">
-      <created>1589354365037</created>
+    <task id="LOCAL-00001" summary="Before changes">
+      <created>1611032154604</created>
       <option name="number" value="00001" />
       <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1589354365037</updated>
+      <updated>1611032154604</updated>
     </task>
-    <task id="LOCAL-00002" summary="Mostly working">
-      <created>1590452764129</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1590452764129</updated>
-    </task>
-    <task id="LOCAL-00003" summary="Mostly working">
-      <created>1590487471417</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1590487471417</updated>
-    </task>
-    <task id="LOCAL-00004" summary="Mostly working">
-      <created>1590487785855</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1590487785855</updated>
-    </task>
-    <task id="LOCAL-00005" summary="Mostly working">
-      <created>1590488002253</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1590488002253</updated>
-    </task>
-    <task id="LOCAL-00006" summary="Mostly working">
-      <created>1590548071703</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1590548071703</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Mostly working">
-      <created>1590556984912</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1590556984912</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Mostly working">
-      <created>1590557321070</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1590557321070</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Mostly working">
-      <created>1590557918382</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1590557918382</updated>
-    </task>
-    <task id="LOCAL-00010" summary="Mostly working">
-      <created>1590558432094</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1590558432094</updated>
-    </task>
-    <task id="LOCAL-00011" summary="Mostly working">
-      <created>1590562581501</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1590562581501</updated>
-    </task>
-    <task id="LOCAL-00012" summary="Browser Stream Working">
-      <created>1597119449702</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1597119449702</updated>
-    </task>
-    <task id="LOCAL-00013" summary="Before browser conversations">
-      <created>1598414316082</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1598414316082</updated>
-    </task>
-    <task id="LOCAL-00014" summary="Before browser conversations">
-      <created>1598425278822</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1598425278822</updated>
-    </task>
-    <task id="LOCAL-00015" summary="Before browser conversations">
-      <created>1598425312189</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1598425312189</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Some errors fixed">
-      <created>1598425624753</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1598425624754</updated>
-    </task>
-    <option name="localTasksCounter" value="17" />
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="*.test" />
-  </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
       <map>
-        <entry key="1">
-          <value>
-            <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="structure">
-                    <value>
-                      <list>
-                        <option value="dir:/home/trevor/dev/xplore/dev certificate" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
         <entry key="MAIN">
           <value>
             <State />
@@ -372,292 +296,127 @@
         </entry>
       </map>
     </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="1" value="TOOL_WINDOW" />
-      </map>
-    </option>
     <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Progress!" />
-    <MESSAGE value="Mostly working" />
-    <MESSAGE value="Browser Stream Working" />
-    <MESSAGE value="Before browser conversations" />
-    <MESSAGE value="Some errors fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="Some errors fixed" />
-  </component>
-  <component name="WindowStateProjectService">
-    <state x="450" y="198" width="530" height="515" key="#ESLint" timestamp="1590285361081">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="450" y="198" width="530" height="515" key="#ESLint/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590285361081" />
-    <state x="279" y="95" width="1079" height="789" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1598328947147">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="286" y="159" width="1079" height="818" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1500.1000@0.0.1500.1000" timestamp="1596807512592" />
-    <state x="279" y="95" width="1079" height="789" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598328947147" />
-    <state x="554" y="282" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1597289270141">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="554" y="282" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1597289270141" />
-    <state x="520" y="311" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper" timestamp="1598420506793">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="520" y="311" key="#com.intellij.ide.scriptingContext.ui.PerFileMappingsDialogWrapper/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598420506793" />
-    <state x="591" y="236" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1598429835366">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="519" y="246" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1500.1000@0.0.1500.1000" timestamp="1596962199066" />
-    <state x="591" y="236" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598429835366" />
-    <state x="658" y="345" key="#com.intellij.tools.ToolEditorDialog" timestamp="1597646015958">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="658" y="345" key="#com.intellij.tools.ToolEditorDialog/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1597646015958" />
-    <state x="522" y="140" key="#example.test.mjs" timestamp="1590457546425">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="522" y="140" key="#example.test.mjs/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590457546425" />
-    <state x="527" y="142" key="#example_usage.js" timestamp="1590730616681">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="527" y="142" key="#example_usage.js/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590730616681" />
-    <state x="539" y="152" key="#tests/server.test.mjs" timestamp="1590466863421">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="539" y="152" key="#tests/server.test.mjs/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590466863421" />
-    <state x="623" y="106" width="593" height="646" key="#xdebugger.evaluate" timestamp="1598411757493">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="150" y="256" width="593" height="472" key="#xdebugger.evaluate/0.0.1500.1000@0.0.1500.1000" timestamp="1596809378822" />
-    <state x="623" y="106" width="593" height="646" key="#xdebugger.evaluate/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598411757493" />
-    <state x="597" y="318" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1598425333311">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="597" y="318" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598425333311" />
-    <state x="254" y="77" width="879" height="769" key="CommitChangelistDialog2" timestamp="1590562581459">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="254" y="77" width="879" height="769" key="CommitChangelistDialog2/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590562581459" />
-    <state width="1274" height="542" key="DebuggerActiveHint" timestamp="1598351423401">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="687" height="565" key="DebuggerActiveHint/0.0.1500.1000@0.0.1500.1000" timestamp="1596808318874" />
-    <state width="1274" height="542" key="DebuggerActiveHint/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598351423401" />
-    <state x="65" y="131" width="907" height="686" key="DiffContextDialog" timestamp="1590487773929">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="65" y="131" width="907" height="686" key="DiffContextDialog/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590487773929" />
-    <state x="649" y="253" key="FileChooserDialogImpl" timestamp="1597811632419">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="649" y="253" key="FileChooserDialogImpl/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1597811632419" />
-    <state width="1649" height="393" key="GridCell.Tab.0.bottom" timestamp="1598430418246">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.0.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302051" />
-    <state width="1649" height="393" key="GridCell.Tab.0.bottom/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430418246" />
-    <state width="1649" height="393" key="GridCell.Tab.0.center" timestamp="1598430418246">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.0.center/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302029" />
-    <state width="1649" height="393" key="GridCell.Tab.0.center/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430418246" />
-    <state width="1649" height="393" key="GridCell.Tab.0.left" timestamp="1598430418246">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.0.left/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302018" />
-    <state width="1649" height="393" key="GridCell.Tab.0.left/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430418246" />
-    <state width="1649" height="393" key="GridCell.Tab.0.right" timestamp="1598430418246">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.0.right/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302040" />
-    <state width="1649" height="393" key="GridCell.Tab.0.right/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430418246" />
-    <state width="1649" height="393" key="GridCell.Tab.1.bottom" timestamp="1598430417213">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.1.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302096" />
-    <state width="1649" height="393" key="GridCell.Tab.1.bottom/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430417213" />
-    <state width="1649" height="393" key="GridCell.Tab.1.center" timestamp="1598430417213">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.1.center/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302072" />
-    <state width="1649" height="393" key="GridCell.Tab.1.center/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430417213" />
-    <state width="1649" height="393" key="GridCell.Tab.1.left" timestamp="1598430417213">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.1.left/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302062" />
-    <state width="1649" height="393" key="GridCell.Tab.1.left/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430417213" />
-    <state width="1649" height="393" key="GridCell.Tab.1.right" timestamp="1598430417213">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.1.right/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302083" />
-    <state width="1649" height="393" key="GridCell.Tab.1.right/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430417213" />
-    <state width="1649" height="393" key="GridCell.Tab.2.bottom" timestamp="1598430416309">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.2.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302144" />
-    <state width="1649" height="393" key="GridCell.Tab.2.bottom/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430416309" />
-    <state width="1649" height="393" key="GridCell.Tab.2.center" timestamp="1598430416309">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.2.center/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302119" />
-    <state width="1649" height="393" key="GridCell.Tab.2.center/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430416309" />
-    <state width="1649" height="393" key="GridCell.Tab.2.left" timestamp="1598430416309">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.2.left/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302107" />
-    <state width="1649" height="393" key="GridCell.Tab.2.left/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430416309" />
-    <state width="1649" height="393" key="GridCell.Tab.2.right" timestamp="1598430416309">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.2.right/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302131" />
-    <state width="1649" height="393" key="GridCell.Tab.2.right/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430416309" />
-    <state width="1649" height="393" key="GridCell.Tab.3.bottom" timestamp="1598430409546">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.3.bottom/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302196" />
-    <state width="1649" height="393" key="GridCell.Tab.3.bottom/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430409546" />
-    <state width="1649" height="393" key="GridCell.Tab.3.center" timestamp="1598430409546">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.3.center/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302168" />
-    <state width="1649" height="393" key="GridCell.Tab.3.center/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430409546" />
-    <state width="1649" height="393" key="GridCell.Tab.3.left" timestamp="1598430409546">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.3.left/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302156" />
-    <state width="1649" height="393" key="GridCell.Tab.3.left/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430409546" />
-    <state width="1649" height="393" key="GridCell.Tab.3.right" timestamp="1598430409546">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="1448" height="388" key="GridCell.Tab.3.right/0.0.1500.1000@0.0.1500.1000" timestamp="1596966302181" />
-    <state width="1649" height="393" key="GridCell.Tab.3.right/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430409546" />
-    <state x="338" y="163" key="IDE.errors.dialog" timestamp="1598412533058">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="338" y="163" key="IDE.errors.dialog/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598412533058" />
-    <state x="155" y="83" width="1261" height="875" key="SettingsEditor" timestamp="1598422986055">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="155" y="83" width="1261" height="875" key="SettingsEditor/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598422986055" />
-    <state x="278" y="226" key="Vcs.Push.Dialog.v2" timestamp="1590562582994">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="278" y="226" key="Vcs.Push.Dialog.v2/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590562582994" />
-    <state width="850" height="443" key="XDebugger.FullValuePopup" timestamp="1598239064754">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state width="850" height="443" key="XDebugger.FullValuePopup/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598239064754" />
-    <state x="638" y="402" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1590487656786">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="638" y="402" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590487656786" />
-    <state x="786" y="118" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey" timestamp="1597646020261">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="786" y="118" key="com.intellij.tools.ToolSelectDialog.dimensionServiceKey/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1597646020261" />
-    <state x="399" y="123" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1597220413317">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="399" y="123" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1597220413317" />
-    <state x="141" y="128" width="733" height="816" key="find.popup" timestamp="1598421793989">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="141" y="128" width="733" height="816" key="find.popup/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598421793989" />
-    <state x="524" y="270" key="git4idea.merge.GitPullDialog" timestamp="1590498928878">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="524" y="270" key="git4idea.merge.GitPullDialog/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590498928878" />
-    <state x="611" y="295" key="git4idea.ui.GitUnstashDialog" timestamp="1590487534615">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="611" y="295" key="git4idea.ui.GitUnstashDialog/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1590487534615" />
-    <state x="517" y="220" key="run.anything.popup" timestamp="1598430508408">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="517" y="220" key="run.anything.popup/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598430508408" />
-    <state x="516" y="216" width="840" height="678" key="search.everywhere.popup" timestamp="1598339570287">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="516" y="216" width="840" height="678" key="search.everywhere.popup/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1598339570287" />
-    <state x="562" y="370" key="vcs.readOnlyHandler.ReadOnlyStatusDialog" timestamp="1597288307944">
-      <screen x="0" y="0" width="1707" height="960" />
-    </state>
-    <state x="562" y="370" key="vcs.readOnlyHandler.ReadOnlyStatusDialog/0.0.1707.960/1707.0.1120.700@0.0.1707.960" timestamp="1597288307944" />
+    <MESSAGE value="Before changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Before changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/tests/mash.test.mjs</url>
-          <line>28</line>
-          <option name="timeStamp" value="263" />
+          <url>file://$PROJECT_DIR$/src/duplex/duplex server.js</url>
+          <line>41</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/node_modules/selfsigned-ca/index.mjs</url>
-          <line>126</line>
-          <option name="timeStamp" value="272" />
+          <url>file://$PROJECT_DIR$/src/node client.js</url>
+          <line>16</line>
+          <option name="timeStamp" value="14" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/node_modules/selfsigned-ca/index.mjs</url>
-          <line>115</line>
-          <option name="timeStamp" value="273" />
+          <url>file://$PROJECT_DIR$/tests/example usage.js</url>
+          <line>65</line>
+          <option name="timeStamp" value="16" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/node_modules/cert-store/index.js</url>
-          <line>159</line>
-          <option name="timeStamp" value="275" />
+          <url>file://$PROJECT_DIR$/tests/example usage.js</url>
+          <line>11</line>
+          <option name="timeStamp" value="17" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/node_modules/cert-store/index.js</url>
-          <line>191</line>
-          <option name="timeStamp" value="278" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/node_modules/cert-store/index.js</url>
-          <line>86</line>
-          <option name="timeStamp" value="280" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/node_modules/cert-store/index.js</url>
-          <line>218</line>
-          <option name="timeStamp" value="281" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/node_modules/cert-store/index.js</url>
-          <line>94</line>
-          <option name="timeStamp" value="282" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.es6</url>
+          <url>file://$PROJECT_DIR$/tests/example usage.js</url>
           <line>14</line>
-          <option name="timeStamp" value="374" />
+          <option name="timeStamp" value="18" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.es6</url>
-          <line>83</line>
-          <option name="timeStamp" value="391" />
+          <url>file://$PROJECT_DIR$/tests/example usage.js</url>
+          <line>9</line>
+          <option name="timeStamp" value="19" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$APPLICATION_CONFIG_DIR$/scratches/scratch_3.es6</url>
-          <line>66</line>
-          <option name="timeStamp" value="392" />
+          <url>file://$PROJECT_DIR$/tests/example usage.js</url>
+          <line>60</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/tests/example usage.js</url>
+          <line>64</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/tests/async functions.test.js</url>
+          <line>18</line>
+          <option name="timeStamp" value="108" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/tests/async functions.test.js</url>
+          <line>4</line>
+          <option name="timeStamp" value="109" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/tests/async functions.test.js</url>
+          <line>78</line>
+          <option name="timeStamp" value="118" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/tests/async functions.test.js</url>
+          <line>99</line>
+          <option name="timeStamp" value="123" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/tests/async functions.test.js</url>
+          <line>163</line>
+          <option name="timeStamp" value="128" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/conversation/object stream.js</url>
+          <line>5</line>
+          <option name="timeStamp" value="156" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/outdated/pullapi.js</url>
+          <line>85</line>
+          <option name="timeStamp" value="159" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>vmscript://node:internal/http2/compat</url>
+          <line>433</line>
+          <option name="timeStamp" value="174" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>vmscript://node:internal/http2/compat</url>
+          <line>432</line>
+          <option name="timeStamp" value="176" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pull/conversation db.js</url>
+          <line>115</line>
+          <option name="timeStamp" value="178" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pull/conversation db.js</url>
+          <line>143</line>
+          <option name="timeStamp" value="179" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pull/server streams router.js</url>
+          <line>34</line>
+          <option name="timeStamp" value="180" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/pull/message router.js</url>
+          <line>59</line>
+          <option name="timeStamp" value="181" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/src/server.js</url>
+          <line>38</line>
+          <properties lambdaOrdinal="-1" />
+          <option name="timeStamp" value="189" />
         </line-breakpoint>
       </breakpoints>
-      <default-breakpoints>
-        <breakpoint log-message="true" log-stack="true" type="javascript-exception" />
-      </default-breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="mocha-javascript-test-runner">
-        <watch expression="question" />
-      </configuration>
-    </watches-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/xplore$test_server_u__.dat" NAME="test server.u() Coverage Results" MODIFIED="1590323288098" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/xplore$test_server_copies_files.dat" NAME="test server.copies files Coverage Results" MODIFIED="1588577347566" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/xplore$test_server_u___content.dat" NAME="test server.u().content Coverage Results" MODIFIED="1589261901884" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
-    <SUITE FILE_PATH="coverage/xplore$test_server_read_and_write_filestreams.dat" NAME="test server.read and write filestreams Coverage Results" MODIFIED="1590372815101" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="MochaJavaScriptTestRunnerCoverage" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

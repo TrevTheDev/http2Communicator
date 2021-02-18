@@ -2,17 +2,24 @@
 
 let streamId = 0
 
+const trackedStreams = new Set()
+
 export const logStream = (stream, headersToLog, tag, log) => {
   if (stream.logId) { console.log('two many times '); return }
   streamId += 1
   stream.logId = streamId
+  trackedStreams.add(streamId)
   if (!['yes', 'verbose', 'all'].includes(log)) return
   const extra = headersToLog ? ` ${headersToLog[':method']}=>${headersToLog[':path']}` : ''
   console.log(`${tag} stream ${stream.logId}${extra}`)
 
   if (!['verbose', 'all'].includes(log)) return
   stream.on('aborted', () => console.log(`${tag} stream ${stream.logId} aborted`))
-  stream.on('close', () => console.log(`${tag} stream ${stream.logId} closed`))
+  stream.on('close', () => {
+    trackedStreams.delete(stream.logId)
+    const streamStats = trackedStreams.size === 0 ? ' - *ALL CLOSED*' : `- open streams: ${Array.from(trackedStreams)}`
+    console.log(`${tag} stream ${stream.logId} closed ${streamStats}`)
+  })
   stream.on('error', (error) => console.log(`${tag} stream ${stream.logId} errored: ${error}`))
   stream.on('frameError', (type, code, id) => console.log(
     `${tag} stream ${stream.logId} frameErrored: ${type} : ${code} : ${id}`,
@@ -83,8 +90,10 @@ export const logSession = (session, tag, log) => {
 
 export const logServer = (server, tag = 'server', log) => {
   if (!['yes', 'verbose', 'all'].includes(log)) return
-  server.on('request', (request/* , response */) => {
+  server.on('request', (request, response) => {
     console.log(`${tag} requested: ${(new Date()).toLocaleString()}: BY: ${request.socket.remoteAddress}: ${tag} requested: ${request.headers[':method']}=>${request.headers[':path']}`)
+    // debugger
+    // if (request.headers[':method'] === 'GET' && request.headers[':path'] === '/browserStreams') response.addTrailers({ ':status': 400 })
   })
   server.on('session', (session) => logSession(session, tag, log))
 

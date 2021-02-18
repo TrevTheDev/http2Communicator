@@ -22,35 +22,46 @@
   "scripts": {
     "lint": "eslint src",
     "test": "node_modules/mocha/bin/mocha",
-    "test-debug": "node --inspect-brk ./node_modules/mocha/bin/mocha"
+    "test-debug": "node --inspect-brk ./node_modules/mocha/bin/mocha",
+    "build": "webpack --config webpack.config.cjs",
+    "watch": "webpack --config webpack.config.cjs --watch"
   },
   "author": "Trevor Rabie",
   "license": "MIT",
   "devDependencies": {
-    "chai": "^4.2.0",
-    "chai-arrays": "^2.2.0",
-    "chai-as-promised": "^7.1.1",
-    "eslint": "^7.6.0",
-    "eslint-config-airbnb-base": "^14.2.0",
+    "@types/node": "^14.14.28",
+    "better-docs": "^2.3.2",
+    "esbuild": "^0.8.47",
+    "eslint": "^7.20.0",
+    "eslint-config-airbnb-base": "^14.2.1",
     "eslint-plugin-chai-expect": "^2.2.0",
-    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-functional": "^3.2.1",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^32.0.2",
     "eslint-plugin-mocha": "^8.0.0",
     "eslint-plugin-node": "^11.1.0",
-    "mocha": "^8.1.1",
+    "jsdoc": "^3.6.6",
     "nyc": "^15.1.0",
-    "webpack": "^4.44.1",
-    "webpack-cli": "^3.3.12"
+    "webpack": "^4.46.0",
+    "webpack-cli": "^4.3.1"
   },
   "dependencies": {
-    "@trevthedev/mash": "0.0.22",
-    "devcert": "^1.1.2",
+    "@trevthedev/mash": "0.0.25",
+    "buffer": "^6.0.3",
+    "chai": "^4.3.0",
+    "chai-arrays": "^2.2.0",
+    "chai-as-promised": "^7.1.1",
+    "devcert": "^1.1.3",
     "etag": "^1.8.1",
     "fresh": "^0.5.2",
-    "mime": "^2.4.6",
-    "range-parser": "^1.2.1"
+    "global": "^4.4.0",
+    "mime": "^2.5.2",
+    "mocha": "^8.3.0",
+    "process": "^0.11.10",
+    "stream-browserify": "^3.0.0"
   },
   "engines": {
-    "node": ">=14.0.0"
+    "node": ">=15.5.1"
   },
   "main": "src/comms server/server node.js",
   "exports": {
@@ -58,6 +69,9 @@
     "./client": "./src/ui/client node.js"
   },
   "type": "module",
+  "browser": {
+    "stream": "stream-browserify"
+  },
   "mode": "all",
   "directories": {
     "test": "tests"

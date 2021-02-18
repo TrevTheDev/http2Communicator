@@ -1,9 +1,11 @@
 /* eslint-disable no-bitwise */
 import EventEmitter from 'events'
 
+const NUMBER_OF_BYTES = 4
+
 const toBytesInt32 = (num) => {
   let ascii = ''
-  for (let i = 3; i >= 0; i -= 1)
+  for (let i = NUMBER_OF_BYTES - 1; i >= 0; i -= 1)
     ascii += String.fromCharCode((num >> (8 * i)) & 255)
 
   return ascii
@@ -11,17 +13,34 @@ const toBytesInt32 = (num) => {
 
 const fromBytesInt32 = (numString) => {
   let result = 0
-  for (let i = 3; i >= 0; i -= 1)
-    result += numString.charCodeAt(3 - i) << (8 * i)
+  for (let i = NUMBER_OF_BYTES - 1; i >= 0; i -= 1)
+    result += numString.charCodeAt(NUMBER_OF_BYTES - 1 - i) << (8 * i)
 
   return result
 }
+/**
+ * @param {string} data
+ * @param {function} objectCallback
+ * @returns {string}
+ */
+const translateDataToObjects = (data, objectCallback) => {
+  if (data.length > 3) {
+    const length = fromBytesInt32(data.substring(0, NUMBER_OF_BYTES))
+    if (length <= data.length - NUMBER_OF_BYTES) {
+      objectCallback(JSON.parse(data.slice(NUMBER_OF_BYTES, length + NUMBER_OF_BYTES)))
+      const remainingData = data.slice(length + NUMBER_OF_BYTES)
+      return translateDataToObjects(remainingData, objectCallback)
+    }
+  }
+  return data
+}
+
 /**
  * Streams JSON objects over streams
  */
 export default class ObjectStream extends EventEmitter {
   /**
-   * @param {ClientHttp2Stream|ServerHttp2Stream|MultiStreamToDuplex} stream
+   * @param {ServerHttp2Stream|ClientHttp2Stream|MultiStreamToDuplex} stream
    * @param {Object=} eventTarget
    * @returns {ObjectStream}
    */
@@ -32,31 +51,19 @@ export default class ObjectStream extends EventEmitter {
 
     this.eventTarget = eventTarget || this
 
-    if (stream.constructor.name === 'ClientHttp2Stream') {
-      this.stream.once('response', (headers, flags) => {
-        this.headers = headers
+    if (this.stream.constructor.name === 'ClientHttp2Stream') {
+      this.stream.once('response', (messageObject, flags) => {
+        this.messageObjects = messageObject
         if (flags) this.flags = flags
       })
     }
-
-    let data = ''
-
+    let remainingData = ''
     const dataCb = (chunk) => {
-      data += chunk.toString()
-      let length = fromBytesInt32(data.substring(0, 4))
-      let loop = 0
-
-      while (length && length <= data.length - 4) {
-        this.eventTarget.emit('object', JSON.parse(data.slice(4, length + 4)))
-        data = data.slice(length + 4)
-        length = data.length === 0 ? undefined : fromBytesInt32(data.substring(0, 4))
-      }
-      loop += 1
-      if (loop > 3) throw new Error(`something wrong decoding data: ${data}`)
+      const data = remainingData + chunk.toString()
+      remainingData = translateDataToObjects(data, (object) => this.eventTarget.emit('object', object))
     }
     const endCb = () => this.eventTarget.emit('end')
     const finishCb = () => this.eventTarget.emit('finish')
-    // const abortedCb = () => this.eventTarget.emit('aborted')
     const closedCb = (code) => {
       this.eventTarget.emit('closed', code)
       stream.removeListener('data', dataCb)
@@ -64,25 +71,11 @@ export default class ObjectStream extends EventEmitter {
       stream.removeListener('finish', finishCb)
       stream.removeListener('close', closedCb)
     }
-    // const errorCb = (error) => this.eventTarget.emit('error', error)
-    // const timeoutCb = () => this.eventTarget.emit('timeout')
 
     stream.on('data', dataCb)
     stream.on('end', endCb)
     stream.on('finish', finishCb)
-    // stream.on('aborted', abortedCb)
     stream.on('close', closedCb)
-
-    // stream.on('error', errorCb)
-    // stream.on('timeout', timeoutCb)
-
-    // stream.once('closed', () => {
-    //   stream.removeListener('end', endCb)
-    //   stream.removeListener('aborted', abortedCb)
-    //   stream.removeListener('closed', closedCb)
-    //   stream.removeListener('error', errorCb)
-    //   stream.removeListener('timeout', timeoutCb)
-    // })
   }
 
   /**
@@ -100,7 +93,7 @@ export default class ObjectStream extends EventEmitter {
    * converts json to string and writes to stream
    * ends writable stream
    * throws if there are any outstanding promises
-   * @param {Object} json
+   * @param {Object?} json
    */
   end(json) {
     if (Object.keys(this.promiseDb).length > 0) throw new Error('Unhandled promises in objectStream')

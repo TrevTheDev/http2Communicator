@@ -127,8 +127,8 @@ const isFresh = (requestHeader, responseHeader) => fresh(requestHeader, {
  * @return {Boolean}
  */
 const FileServer = (stream, requestHeader /* , flags, rawHeaders */) => {
-  const sendCode = (status, message = '', resHeaders = {}) => {
-    stream.respond({ ':status': status, 'Cache-Control': 'no-cache', ...resHeaders })
+  const sendCode = (status, message = '', resHeaders = { ...SETTINGS.defaultResponseHeaders }) => {
+    stream.respond({ ...resHeaders, ':status': status, 'Cache-Control': 'no-cache' })
     stream.end(message)
   }
 
@@ -146,17 +146,13 @@ const FileServer = (stream, requestHeader /* , flags, rawHeaders */) => {
 
       // send the requested file
       const responseHeader = {
+        ...SETTINGS.defaultResponseHeaders,
         // ETag: etag(stats),
         // 'Last-Modified': stats.mtime,
         // 'Content-Length': stats.size,
         'Content-Type': `${mime.getType(filePath)}; charset=utf-8`,
-        // 'Cache-Control': staticCache,
-        'Access-Control-Allow-Methods': 'GET, POST, PUT, DELETE, OPTIONS',
-        'Access-Control-Allow-Headers': '*',
-        'Access-Control-Max-Age': 86400,
-        'Access-Control-Allow-Credentials': true,
-        'Access-Control-Allow-Origin': '*',
         'Cache-Control': 'max-age=0, no-cache, must-revalidate, proxy-revalidate',
+        // 'Cache-Control': staticCache,
       }
       // not-modified
       if (isFresh(requestHeader, responseHeader))

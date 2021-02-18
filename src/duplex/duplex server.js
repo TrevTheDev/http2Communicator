@@ -1,19 +1,13 @@
 import EventEmitter from 'events'
 import MultiStreamToDuplex from './multi stream to duplex.js'
+import { SETTINGS } from '../other/globals.js'
 
 export default class DuplexServer extends EventEmitter {
   /**
    * @param {Object} defaultResponseHeaders
    * @returns {DuplexServer}
    */
-  constructor(defaultResponseHeaders = {
-    'Access-Control-Allow-Methods': '*',
-    'Access-Control-Allow-Headers': '*',
-    'Access-Control-Max-Age': 86400,
-    'Access-Control-Allow-Credentials': true,
-    'Access-Control-Allow-Origin': '*', // `${session.socket.remoteAddress}`
-    'Cache-Control': 'max-age=0, no-cache, must-revalidate, proxy-revalidate',
-  }) {
+  constructor(defaultResponseHeaders = SETTINGS.defaultResponseHeaders) {
     super()
     this.defaultResponseHeaders = defaultResponseHeaders
     this.sessions = new Map()
@@ -44,7 +38,8 @@ export default class DuplexServer extends EventEmitter {
     if (method === 'POST') {
       const id = headers['http2-duplex-id']
       const duplex = duplexes.get(id)
-      if (duplex) duplex.addStream(stream, headers)
+      if (duplex) duplex.addInStream(stream, headers)
+      // else if (headers['http2-duplex-end']) respond(200)
       else respond(404)
     } else if (method === 'GET') {
       const duplex = new MultiStreamToDuplex(stream, this.defaultResponseHeaders)

@@ -16,7 +16,7 @@ const clientCode = async () => {
 
   // handles any messages sent by comms server of type 'hello' to this question
   question.on('hello', (msg) => {
-    console.log(`LOG STEP 2: ${JSON.stringify(msg)}`)
+    console.log(`CLIENT: LOG STEP 2: ${JSON.stringify(msg)}`)
     // sends message to comms server of type 'message' to this question
     question.say({ i: 'say', stuff: true, step: 4 })
   })
@@ -24,10 +24,10 @@ const clientCode = async () => {
   // handles any questions from the  comms server to this question
   // Response object is provided
   question.on('question', (response) => {
-    console.log(`LOG STEP 3: ${JSON.stringify(response.json)}`)
+    console.log(`CLIENT: LOG STEP 3: ${JSON.stringify(response.json)}`)
     // handles any messages sent by comms server of type 'more' to this response
     response.on('more', (msg) => {
-      console.log(`LOG STEP 6: ${JSON.stringify(msg)}`)
+      console.log(`CLIENT: LOG STEP 6: ${JSON.stringify(msg)}`)
       // reply to servers question
       response.reply({
         answer: 'yes', i: 'like', my: 'name', step: 7,
@@ -39,7 +39,7 @@ const clientCode = async () => {
 
   // stream established by comms server.createListener
   question.on('uploadFile', (stream) => {
-    fs.createReadStream('../package.json').pipe(stream)
+    fs.createReadStream('./package.json').pipe(stream)
   })
 
   // stream established by comms server.createSpeaker
@@ -49,7 +49,7 @@ const clientCode = async () => {
 
   // await response to question
   const response = await question
-  console.log(`LOG STEP 1 ANSWER: ${JSON.stringify(response)}`)
+  console.log(`CLIENT: LOG STEP 1 ANSWER: ${JSON.stringify(response)}`)
 
   // gracefully ends comms with the server
   await client.end()
@@ -61,10 +61,11 @@ const clientCode = async () => {
   const server = await (new ServerNode(undefined, { log: 'verbose' }))
 
   // the server waits for and responds to `question` objects
+
   server.on('question', async (serverResponse) => {
-    console.log(`LOG STEP 1: ${JSON.stringify(serverResponse.json)}`)
+    console.log(`SERVER: LOG STEP 1: ${JSON.stringify(serverResponse.json)}`)
     // handles any messages sent by client of type 'message' to this serverResponse
-    serverResponse.on('message', (msg) => console.log(`LOG STEP 4: ${JSON.stringify(msg)}`))
+    serverResponse.on('message', (msg) => console.log(`SERVER: LOG STEP 4: ${JSON.stringify(msg)}`))
     // sends 'hello' JSON message to client's question
     serverResponse.say({ first: 'your', name: 'please', step: 2 }, 'hello')
     // asks a question of client's question
@@ -73,11 +74,11 @@ const clientCode = async () => {
     })
     // handles any messages sent by client of type 'message' to this question
     question.on('message', (msg) => {
-      console.log(`LOG STEP 5: ${JSON.stringify(msg)}`)
+      console.log(`SERVER: LOG STEP 5: ${JSON.stringify(msg)}`)
       question.say({ and: 'I', say: 'more', step: 6 }, 'more')
     })
     // waits for client to respond to question
-    console.log(`LOG STEP 7: ${JSON.stringify(await question)}`)
+    console.log(`SERVER: LOG STEP 7: ${JSON.stringify(await question)}`)
 
     // establishes a new stream from client to comms server (opposite of Push Stream)
     // streams can also stream objects - known as Speaker
@@ -87,7 +88,7 @@ const clientCode = async () => {
     // stream file to client - Push Stream
     // streams can also stream objects - known as Speaker
     const fileSpeaker = await serverResponse.createSpeaker('downloadFile', 'raw')
-    fs.createReadStream('../package.json').pipe(fileSpeaker)
+    fs.createReadStream('./package.json').pipe(fileSpeaker)
 
     // after file has been streamed, reply to the original question
     fileSpeaker.on('finish', () => serverResponse.reply({ my: 'name', is: 'server' }))

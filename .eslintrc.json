@@ -3,7 +3,8 @@
     "browser": false,
     "node": true,
     "mocha": true,
-    "es2020": true
+    "es2020": true,
+    "es2021": true
   },
   "extends": [
     "airbnb-base",
@@ -18,12 +19,14 @@
   "plugins": [
     "node",
     "mocha",
-    "chai-expect"
+    "chai-expect",
+    "jsdoc"
   ],
   "root": true,
   "rules": {
     "no-console": "off",
     "no-param-reassign": "off",
+    "no-debugger": "off",
     "nonblock-statement-body-position": [ "error", "any" ],
     "curly": ["error", "multi-or-nest"],
     "no-underscore-dangle": "off",
@@ -31,5 +34,18 @@
     "mocha/no-mocha-arrows": "off",
     "import/extensions": ["error","always"],
     "semi": [2,"never"]
-  }
+  },
+  "overrides": [{
+    "files": ["src/Fn/*.js"],
+    "plugins": [
+      "functional"
+    ],
+    "extends": [
+      "plugin:functional/recommended",
+      "plugin:functional/external-recommended"
+    ],
+    "rules": {
+      "functional/no-conditional-statement": ["error",{"allowReturningBranches": true}]
+    }
+  }]
 }

@@ -17,48 +17,22 @@ class FetchDuplex extends Duplex {
    * @param {DuplexOptions} duplexOptions
    * @returns {Promise<FetchDuplex>}
    */
-  constructor(url, fetchOptions = {}, duplexOptions = {}, doneCb) {
+  constructor(url, reader, id, fetchOptions = {}, duplexOptions = {}, errorCb) {
     super(duplexOptions)
     let idx = 0
     let reading = false
     let first = true
-    let successCb
-    let failureCb
-    let pms
     const once = runFnsOnlyOnce()
-
-    this.then = (success, failure) => {
+    const errorFn = once((...args) => {
       debugger
-      if (!pms) {
-        pms = new Promise((resolve, reject) => {
-          debugger
-          const doneFn = (fn) => once((...args) => {
-            doneCb()
-            fn(...args)
-          })
-          successCb = doneFn(resolve)
-          failureCb = doneFn(reject);
-          (async () => {
-            try {
-              const response = await fetch(url, { cache: 'no-store', ...fetchOptions })
-              if (response.ok) {
-                this.reader = response.body.getReader()
-                this.id = response.headers.get('http2-duplex-id')
-                successCb(this)
-              } else
-                failureCb(response)
-            } catch (e) {
-              debugger
-              failureCb(e)
-            }
-          })()
-        })
-      }
-      pms.then(success, failure)
-    }
+      errorCb(...args)
+    })
 
     this._read = () => {
-      if (reading) return
+      if (reading) {
+        // debugger
+        return
+      }
       reading = true;
       (async () => {
         try {
@@ -66,7 +40,7 @@ class FetchDuplex extends Duplex {
           let done
           do {
             // eslint-disable-next-line no-await-in-loop
-            ({ value, done } = await this.reader.read())
+            ({ value, done } = await reader.read())
             if (done) this.push(null)
             else if (first) {
               // Sometimes fetch waits for first byte before resolving
@@ -76,7 +50,8 @@ class FetchDuplex extends Duplex {
             } else
               done = !this.push(Buffer.from(value))
           } while (!done)
-        } catch (error) { failureCb(error) } finally { reading = false }
+          reading = false
+        } catch (error) { errorFn(error) }
       })()
     }
 
@@ -89,10 +64,12 @@ class FetchDuplex extends Duplex {
       (async () => {
         try {
           const response = await this._fetch({ body: Uint8Array.from(chunk) })
-          if (!response.ok) throw new Error(JSON.stringify(response))
-          await response.arrayBuffer()
-          callback(null)
-        } catch (error) { failureCb(error) }
+          if (!response.ok) errorFn(response)
+          else {
+            await response.arrayBuffer()
+            callback(null)
+          }
+        } catch (error) { errorFn(error) }
       })()
     }
 
@@ -110,10 +87,10 @@ class FetchDuplex extends Duplex {
         ...additionalRequestInit,
       }
       options.headers = {
-        'http2-duplex-id': this.id,
-        'http2-duplex-idx': idx,
         'Content-Type': 'application/octet-stream',
         ...options.headers,
+        'http2-duplex-id': id,
+        'http2-duplex-idx': idx,
       }
       idx += 1
       return fetch(url, options)
@@ -168,25 +145,26 @@ class FetchDuplex extends Duplex {
  * @returns {FetchDuplex}
  */
 // eslint-disable-next-line max-len
-const duplexStream = (url, fetchOptions = {}, duplexOptions = {}, doneCb) => new Promise((resolve, reject) => {
+const connectToServer = (url, fetchOptions = {}, duplexOptions = {}, errorCb) => new Promise((resolve, reject) => {
   (async () => {
     try {
       const response = await fetch(url, { ...fetchOptions, cache: 'no-store' })
       if (response.ok) {
-        const reader = response.body.getReader()
-        const id = response.headers.get('http2-duplex-id')
-
-        const strm = new FetchDuplex(reader, id)
-
-        resolve(strm)
+        resolve(new FetchDuplex(
+          url,
+          response.body.getReader(),
+          response.headers.get('http2-duplex-id'),
+          fetchOptions,
+          duplexOptions,
+          errorCb,
+        ))
       } else
         reject(response)
     } catch (e) {
       debugger
-      resolve(e)
+      reject(e)
     }
   })()
 })
-// const x = new FetchDuplex(url, fetchOptions, duplexOptions, doneCb)
 
-export default duplexStream
+export default connectToServer

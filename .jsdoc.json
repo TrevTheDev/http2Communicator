@@ -1,0 +1,26 @@
+{
+  "plugins": [
+    "node_modules/better-docs/category"
+  ],
+  "recurseDepth": 10,
+  "source": {
+    "include": ["src","src/pull","src/other"],
+    "exclude": ["src/file server.js", "src/node client.js", "src/router.js"],
+    "includePattern": ".+\\.js(doc|x)?$",
+    "excludePattern": "(^|\\/|\\\\)_"
+  },
+  "sourceType": "module",
+  "tags": {
+    "allowUnknownTags": true,
+    "dictionaries": ["jsdoc","closure"]
+  },
+  "templates": {
+    "cleverLinks": false,
+    "monospaceLinks": false
+  },
+  "opts": {
+    "template": "node_modules/better-docs",
+    "private": true
+  }
+}
+

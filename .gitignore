@@ -3,7 +3,9 @@
 /logs/
 /node_modules/
 /.tmp/
-/.old/
+/outdated/
+/out/
 package-lock.json
 /dev certificate/selfsigned.crt
 /dev certificate/selfsigned.key
+/dist/bundle.js
