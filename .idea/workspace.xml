@@ -22,82 +22,9 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="29bd053b-1414-42c9-bfc1-66225f811fcd" name="Default Changelist" comment="Before changes">
-      <change afterPath="$PROJECT_DIR$/.esdoc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.jsdoc.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/browser/browser client.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/client.test.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/dist/http2 duplex stream.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/esbuild.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/Fn/conversation.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/Fn/conversations.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/Fn/fnLibrary.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/Fn/function bx.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/Fn/function parser.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/Fn/streams.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/Fn/utils.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/fluture.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/promise.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/pullapi.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/outdated/tracker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/other/shared functions.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/answer.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/browser get object from stream.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/conversation db.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/enhanced stream.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/get object from streams.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/http error.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/message router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/question.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/server conversation handler.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/server streams router.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pull/shared base.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/async functions.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/browser client.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/node to browser shims.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/tests/server.test.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintignore" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/.eslintrc.json" afterDir="false" />
+    <list default="true" id="29bd053b-1414-42c9-bfc1-66225f811fcd" name="Default Changelist" comment="Pull sorta working!">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/http2Communicator.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/http2Communicator.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jsLinters/eslint.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.mocharc.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/.mocharc.cjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/client.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/conversation/base.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/conversation/listener promise.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/conversation/object stream.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/conversation/question.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/conversation/response.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/conversation/server response.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/conversation/speaker.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/duplex/duplex stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/browser/duplex/duplex stream.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/other/globals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/other/http2 logging.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/browser/other/http2 tracking.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/listener promise.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/listener promise.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/object stream.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/object stream.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/question.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/question.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/response.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/conversation/server response.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/conversation/server response.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duplex browser/client duplex stream.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duplex browser/client.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duplex browser/dist/client.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duplex/duplex server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/duplex/duplex server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/duplex/multi stream to duplex.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/duplex/multi stream to duplex.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/file server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/file server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node client.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/node client.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/other/globals.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/other/globals.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/other/http2 logging.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/other/http2 logging.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/router.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/router.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/server.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/server.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/example usage.js" beforeDir="false" afterPath="$PROJECT_DIR$/tests/example usage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/mash.test.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/tests/mash.tst.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/webpack.config.cjs" beforeDir="false" afterPath="$PROJECT_DIR$/webpack.config.cjs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -271,7 +198,7 @@
       <workItem from="1612319764404" duration="57879000" />
       <workItem from="1612513582791" duration="18773000" />
       <workItem from="1612662819463" duration="70320000" />
-      <workItem from="1613096764011" duration="91985000" />
+      <workItem from="1613096764011" duration="92421000" />
     </task>
     <task id="LOCAL-00001" summary="Before changes">
       <created>1611032154604</created>
@@ -280,7 +207,14 @@
       <option name="project" value="LOCAL" />
       <updated>1611032154604</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Pull sorta working!">
+      <created>1613621189880</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1613621189880</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -300,7 +234,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Before changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Before changes" />
+    <MESSAGE value="Pull sorta working!" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pull sorta working!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
